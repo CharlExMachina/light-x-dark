@@ -24,6 +24,7 @@ animations = [ {
 extents = Vector2( 25.5, 24 )
 
 [node name="Player" type="KinematicBody2D"]
+z_index = 5
 collision_layer = 0
 collision_mask = 0
 script = ExtResource( 9 )
@@ -43,3 +44,12 @@ shape = SubResource( 2 )
 [node name="HitboxShape" type="CollisionShape2D" parent="Hitbox"]
 modulate = Color( 0.509804, 0, 0.713726, 1 )
 shape = SubResource( 3 )
+
+[node name="LightBeamDelay" type="Timer" parent="."]
+wait_time = 0.643
+
+[node name="DarkBeamDelay" type="Timer" parent="."]
+wait_time = 0.08
+
+[connection signal="timeout" from="LightBeamDelay" to="." method="_on_LightBeamDelay_timeout"]
+[connection signal="timeout" from="DarkBeamDelay" to="." method="_on_DarkBeamDelay_timeout"]
