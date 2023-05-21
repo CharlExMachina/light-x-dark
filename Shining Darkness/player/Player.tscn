@@ -7,7 +7,7 @@
 [ext_resource path="res://enemies/common/sprites/explosion_2/hits_5_1.png" type="Texture" id=5]
 [ext_resource path="res://enemies/common/sprites/explosion_2/hits_5_2.png" type="Texture" id=6]
 [ext_resource path="res://enemies/common/sprites/explosion_2/hits_5_4.png" type="Texture" id=7]
-[ext_resource path="res://icon.png" type="Texture" id=8]
+[ext_resource path="res://player/PlayerShipSprite.tscn" type="PackedScene" id=8]
 [ext_resource path="res://player/Player.gd" type="Script" id=9]
 
 [sub_resource type="SpriteFrames" id=1]
@@ -29,8 +29,7 @@ collision_mask = 0
 script = ExtResource( 9 )
 movement_speed = 500.0
 
-[node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 8 )
+[node name="PlayerShipSprite" parent="." instance=ExtResource( 8 )]
 
 [node name="Explosion" type="AnimatedSprite" parent="."]
 visible = false
