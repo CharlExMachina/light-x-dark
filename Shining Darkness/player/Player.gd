@@ -31,7 +31,3 @@ func _physics_process(delta: float) -> void:
 	_velocity = move_and_slide(_velocity * movement_speed)
 
 	position.x = clamp(position.x, 0 + _sprite_size, _x_limits - _sprite_size)
-
-
-func _on_Timer_timeout() -> void:
-	_can_shoot = true
