@@ -86,9 +86,22 @@ func _shoot_beam() -> void:
 		_light_beam_timer.start()
 	elif _can_shoot_dark_beam and _attack_mode == AttackMode.DARK_MODE:
 		_can_shoot_dark_beam = false
-		var beam_instance = _dark_beam_scene.instance()
-		get_parent().add_child(beam_instance)
-		beam_instance.position = position - Vector2(0, 20)
+
+		var beam_instance_center = _dark_beam_scene.instance()
+		var beam_instance_left = _dark_beam_scene.instance()
+		var beam_instance_right = _dark_beam_scene.instance()
+
+		get_parent().add_child(beam_instance_center)
+		get_parent().add_child(beam_instance_left)
+		get_parent().add_child(beam_instance_right)
+
+		beam_instance_center.position = position - Vector2(0, 20)
+		beam_instance_left.position = position - Vector2(10, 20)
+		beam_instance_right.position = position - Vector2(-10, 20)
+
+		beam_instance_left.rotation_degrees = -35.0
+		beam_instance_right.rotation_degrees = 35.0
+
 		_dark_beam_timer.start()
 
 
