@@ -5,6 +5,7 @@
 [ext_resource path="res://enemies/basic/beams/sprites/enemy_dark_beam_interior-export.png" type="Texture" id=3]
 
 [node name="EnemyDarkBeam" instance=ExtResource( 1 )]
+collision_layer = 8
 movement_speed = -300.0
 
 [node name="Sprite" parent="." index="1"]
@@ -26,3 +27,5 @@ position = Vector2( -1.78814e-07, -1.42857 )
 scale = Vector2( 0.656905, 0.656905 )
 texture = ExtResource( 3 )
 hframes = 2
+
+[connection signal="area_entered" from="." to="." method="_on_EnemyDarkBeam_area_entered"]

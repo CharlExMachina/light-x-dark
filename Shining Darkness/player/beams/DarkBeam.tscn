@@ -10,7 +10,6 @@ radius = 4.0
 
 [node name="DarkBeam" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
-normalized_direction = null
 movement_speed = 900.0
 
 [node name="CollisionShape2D" parent="." index="0"]

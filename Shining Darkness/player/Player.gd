@@ -13,6 +13,7 @@ enum AttackMode {
 onready var _ship_sprite = $PlayerShipSprite
 onready var _dark_beam_timer = $DarkBeamDelay
 onready var _light_beam_timer = $LightBeamDelay
+onready var _hitbox = $Hitbox
 
 var _light_beam_scene = preload("res://player/beams/LightBeam.tscn")
 var _dark_beam_scene = preload("res://player/beams/DarkBeam.tscn")
@@ -32,6 +33,10 @@ func _ready() -> void:
 	_x_limits = get_viewport_rect().size.x
 	var ship_sprite_frame_width = _ship_sprite.get_rect().size.x * _ship_sprite.transform.get_scale().x / 2.0
 	_sprite_size = ship_sprite_frame_width
+
+	# light mode default
+	set_collision_mask_bit(3, true) # enables collision with dark beams
+	set_collision_mask_bit(2, false) # disables collision with light beams
 
 
 func _process(delta: float) -> void:
