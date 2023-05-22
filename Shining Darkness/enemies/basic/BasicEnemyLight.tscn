@@ -1,0 +1,58 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://enemies/BaseEnemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://enemies/basic/sprites/enemy-basic-light.png" type="Texture" id=2]
+[ext_resource path="res://enemies/common/sprites/explosion_2/hits_5_6.png" type="Texture" id=3]
+[ext_resource path="res://enemies/common/sprites/explosion_2/hits_5_4.png" type="Texture" id=4]
+[ext_resource path="res://enemies/common/sprites/explosion_2/hits_5_2.png" type="Texture" id=5]
+[ext_resource path="res://enemies/common/sprites/explosion_2/hits_5_1.png" type="Texture" id=6]
+[ext_resource path="res://enemies/common/sprites/explosion_2/hits_5_5.png" type="Texture" id=7]
+[ext_resource path="res://enemies/common/sprites/explosion_2/hits_5_7.png" type="Texture" id=8]
+[ext_resource path="res://enemies/common/sprites/explosion_2/hits_5_3.png" type="Texture" id=9]
+[ext_resource path="res://enemies/basic/BasicEnemyLight.gd" type="Script" id=10]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 32, 16 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 2 )
+region = Rect2( 32, 0, 32, 16 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 6 ), ExtResource( 5 ), ExtResource( 9 ), ExtResource( 4 ), ExtResource( 7 ), ExtResource( 3 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "default",
+"speed": 18.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 20, 8 )
+
+[node name="BasicEnemyLight" instance=ExtResource( 1 )]
+script = ExtResource( 10 )
+
+[node name="AnimatedSprite" parent="." index="0"]
+scale = Vector2( 3.2, 3.2 )
+frames = SubResource( 3 )
+frame = 1
+playing = true
+
+[node name="ExplosionAnimation" parent="." index="1"]
+scale = Vector2( 1.8, 1.8 )
+frames = SubResource( 5 )
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2( 0, 1 )
+shape = SubResource( 4 )
+
+[connection signal="timeout" from="TimeToShoot" to="." method="_on_TimeToShoot_timeout"]

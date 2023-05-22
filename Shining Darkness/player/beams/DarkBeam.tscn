@@ -1,13 +1,20 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://common/beam/Beam.tscn" type="PackedScene" id=1]
 [ext_resource path="res://player/beams/sprites/dark_beam.png" type="Texture" id=2]
 [ext_resource path="res://player/beams/DarkBeam.gd" type="Script" id=3]
 [ext_resource path="res://player/beams/sounds/placeholder.wav" type="AudioStream" id=4]
 
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 4.0
+
 [node name="DarkBeam" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
+normalized_direction = null
 movement_speed = 900.0
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource( 1 )
 
 [node name="Sprite" parent="." index="1"]
 modulate = Color( 0.580392, 0.290196, 2, 1 )

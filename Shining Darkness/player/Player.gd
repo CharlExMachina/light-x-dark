@@ -56,9 +56,13 @@ func _handle_mode_switch() -> void:
 	if (Input.is_action_just_pressed("light_mode_switch") and not _attack_mode == AttackMode.LIGHT_MODE):
 		_attack_mode = AttackMode.LIGHT_MODE
 		_ship_sprite.switch_to_light_mode()
+		set_collision_mask_bit(3, true) # enables collision with dark beams
+		set_collision_mask_bit(2, false) # disables collision with light beams
 	elif (Input.is_action_just_pressed("dark_mode_switch") and not _attack_mode == AttackMode.DARK_MODE):
 		_attack_mode = AttackMode.DARK_MODE
 		_ship_sprite.switch_to_dark_mode()
+		set_collision_mask_bit(2, true) # enables collision with light beams
+		set_collision_mask_bit(3, false) # disables collision with dark beams
 
 
 func _shoot_beam() -> void:
