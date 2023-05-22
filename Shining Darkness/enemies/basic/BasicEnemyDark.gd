@@ -7,8 +7,6 @@ func _on_Area2D_area_entered(area: Area2D) -> void:
 
 	var damage = area.damage_value
 
-	print(health_points)
-
 	health_points -= damage
 
 	if (health_points <= 0):
