@@ -5,11 +5,12 @@
 [ext_resource path="res://stage_1/sprites/parallax_space_ring_planet.png" type="Texture" id=3]
 [ext_resource path="res://default_env.tres" type="Environment" id=4]
 [ext_resource path="res://enemies/basic/BasicEnemyLight.tscn" type="PackedScene" id=5]
-[ext_resource path="res://enemies/basic/beams/EnemyDarkBeam.tscn" type="PackedScene" id=6]
-[ext_resource path="res://enemies/basic/beams/EnemyLightBeam.tscn" type="PackedScene" id=7]
-[ext_resource path="res://enemies/basic/BasicEnemyDark.tscn" type="PackedScene" id=8]
+[ext_resource path="res://common/stages/GameManager.gd" type="Script" id=9]
+[ext_resource path="res://player/ui/hp_bar/hp_bar_inner_v2.png" type="Texture" id=10]
+[ext_resource path="res://player/ui/hp_bar/hp_bar_outer_v2.png" type="Texture" id=11]
 
 [node name="Stage1" type="Node"]
+script = ExtResource( 9 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -100
@@ -19,17 +20,50 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 2 )
 expand = true
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Planet" type="TextureRect" parent="CanvasLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 624.0
+margin_left = 753.0
 margin_top = 1.0
-margin_right = -138.0
+margin_right = -9.0
 margin_bottom = -273.0
 texture = ExtResource( 3 )
 expand = true
 stretch_mode = 5
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="UILayer" type="CanvasLayer" parent="."]
+
+[node name="HPContainer" type="TextureRect" parent="UILayer"]
+margin_left = 24.0
+margin_top = 22.0
+margin_right = 381.0
+margin_bottom = 67.0
+texture = ExtResource( 11 )
+expand = true
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="HealthBar" type="TextureProgress" parent="UILayer/HPContainer"]
+unique_name_in_owner = true
+margin_left = 56.0
+margin_top = 14.0
+margin_right = 352.0
+margin_bottom = 31.0
+value = 100.0
+texture_progress = ExtResource( 10 )
+nine_patch_stretch = true
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 228, 514 )
@@ -37,40 +71,8 @@ position = Vector2( 228, 514 )
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 4 )
 
-[node name="BasicEnemyDark" parent="." instance=ExtResource( 8 )]
-position = Vector2( 446, 130 )
-
-[node name="BasicEnemyDark2" parent="." instance=ExtResource( 8 )]
-position = Vector2( 451, 279 )
-
-[node name="BasicEnemyDark3" parent="." instance=ExtResource( 8 )]
-position = Vector2( 982, 186 )
-
-[node name="BasicEnemyDark4" parent="." instance=ExtResource( 8 )]
-position = Vector2( 743, 187 )
-
 [node name="BasicEnemyLight" parent="." instance=ExtResource( 5 )]
 position = Vector2( 232, 90 )
 z_index = 0
 
-[node name="BasicEnemyLight3" parent="." instance=ExtResource( 5 )]
-position = Vector2( 610, 126 )
-z_index = 0
-
-[node name="BasicEnemyLight4" parent="." instance=ExtResource( 5 )]
-position = Vector2( 248, 307 )
-z_index = 0
-
-[node name="BasicEnemyLight5" parent="." instance=ExtResource( 5 )]
-position = Vector2( 742, 261 )
-z_index = 0
-
-[node name="BasicEnemyLight2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 743, 76 )
-z_index = 0
-
-[node name="EnemyDarkBeam" parent="." instance=ExtResource( 6 )]
-position = Vector2( 230, 136 )
-
-[node name="EnemyLightBeam" parent="." instance=ExtResource( 7 )]
-position = Vector2( 224, 32 )
+[connection signal="on_hp_changed" from="Player" to="." method="_on_Player_on_hp_changed"]

@@ -1,15 +1,13 @@
 extends "res://enemies/BaseEnemy.gd"
 
-#var enemy_light_beam = preload("")
-
 func _on_TimeToShoot_timeout() -> void:
-	pass # Replace with function body.
+	var instanced_light_beam = beam_scene.instance()
+	instanced_light_beam.global_position = global_position
+	get_parent().add_child(instanced_light_beam)
 
 
 func _on_Area2D_area_entered(area: Area2D) -> void:
 	var damage = area.damage_value
-
-	print(health_points)
 
 	health_points -= damage
 

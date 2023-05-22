@@ -104,6 +104,8 @@ shoot={
 2d_physics/layer_2="Enemy"
 2d_physics/layer_3="Light"
 2d_physics/layer_4="Dark"
+2d_physics/layer_5="LightEnemy"
+2d_physics/layer_6="DarkEnemy"
 
 [physics]
 

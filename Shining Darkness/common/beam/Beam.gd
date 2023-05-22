@@ -12,7 +12,7 @@ func _on_DisappearDelay_timeout():
 
 func _on_EnemyDarkBeam_area_entered(area: Area2D) -> void:
 	# check if player is in the dark collision layer
-	var is_in_dark_mode = area.get_collision_mask_bit(2)
+	var is_in_dark_mode = area.get_collision_mask_bit(5)
 
 	if not is_in_dark_mode:
 		# it only destroys itself if the player is in light mode
@@ -21,7 +21,7 @@ func _on_EnemyDarkBeam_area_entered(area: Area2D) -> void:
 
 func _on_EnemyLightBeam_area_entered(area: Area2D) -> void:
 	# check if player is in the dark collision layer
-	var is_in_light_mode = area.get_collision_mask_bit(3)
+	var is_in_light_mode = area.get_collision_mask_bit(4)
 
 	if not is_in_light_mode:
 		# it only destroys itself if the player is in light mode
