@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://stage_1/sprites/parallax_space_backgound.png" type="Texture" id=2]
@@ -8,8 +8,12 @@
 [ext_resource path="res://enemies/basic/beams/EnemyDarkBeam.tscn" type="PackedScene" id=6]
 [ext_resource path="res://enemies/basic/beams/EnemyLightBeam.tscn" type="PackedScene" id=7]
 [ext_resource path="res://enemies/basic/BasicEnemyDark.tscn" type="PackedScene" id=8]
+[ext_resource path="res://common/stages/GameManager.gd" type="Script" id=9]
+[ext_resource path="res://player/ui/hp_bar/hp_bar_inner_v2.png" type="Texture" id=10]
+[ext_resource path="res://player/ui/hp_bar/hp_bar_outer_v2.png" type="Texture" id=11]
 
 [node name="Stage1" type="Node"]
+script = ExtResource( 9 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -100
@@ -23,13 +27,35 @@ expand = true
 [node name="Planet" type="TextureRect" parent="CanvasLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 624.0
+margin_left = 753.0
 margin_top = 1.0
-margin_right = -138.0
+margin_right = -9.0
 margin_bottom = -273.0
 texture = ExtResource( 3 )
 expand = true
 stretch_mode = 5
+
+[node name="UILayer" type="CanvasLayer" parent="."]
+
+[node name="HPContainer" type="TextureRect" parent="UILayer"]
+margin_left = 24.0
+margin_top = 22.0
+margin_right = 381.0
+margin_bottom = 67.0
+texture = ExtResource( 11 )
+expand = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="HealthBar" type="TextureProgress" parent="UILayer/HPContainer"]
+margin_left = 56.0
+margin_top = 14.0
+margin_right = 352.0
+margin_bottom = 31.0
+value = 100.0
+texture_progress = ExtResource( 10 )
+nine_patch_stretch = true
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 228, 514 )
