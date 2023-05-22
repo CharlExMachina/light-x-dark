@@ -23,4 +23,15 @@ func _ready() -> void:
 
 
 func _on_DarkBeam_area_entered(area: Area2D) -> void:
+	if not area.get_collision_mask_bit(3):
+		return
+
+	movement_speed = 0.0
+	set_deferred("monitoring", false)
+	set_deferred("monitorable", false)
+	$Sprite.hide()
+	$Sprite2.hide()
+	$Sprite3.hide()
+	$CollisionParticle.emitting = true
+	yield(get_tree().create_timer(0.5), "timeout")
 	queue_free()

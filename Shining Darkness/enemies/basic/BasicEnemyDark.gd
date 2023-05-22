@@ -2,6 +2,9 @@ extends "res://enemies/BaseEnemy.gd"
 
 
 func _on_Area2D_area_entered(area: Area2D) -> void:
+	if area.get_collision_layer_bit(3):
+		return
+
 	var damage = area.damage_value
 
 	print(health_points)
