@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://enemies/BaseEnemy.tscn" type="PackedScene" id=1]
-[ext_resource path="res://enemies/basic/sprites/enemy-basic-light.png" type="Texture" id=2]
+[ext_resource path="res://enemies/basic/sprites/enemy-basic-dark.png" type="Texture" id=2]
 [ext_resource path="res://enemies/common/sprites/explosion_2/hits_5_6.png" type="Texture" id=3]
 [ext_resource path="res://enemies/common/sprites/explosion_2/hits_5_4.png" type="Texture" id=4]
 [ext_resource path="res://enemies/common/sprites/explosion_2/hits_5_2.png" type="Texture" id=5]
@@ -9,19 +9,19 @@
 [ext_resource path="res://enemies/common/sprites/explosion_2/hits_5_5.png" type="Texture" id=7]
 [ext_resource path="res://enemies/common/sprites/explosion_2/hits_5_7.png" type="Texture" id=8]
 [ext_resource path="res://enemies/common/sprites/explosion_2/hits_5_3.png" type="Texture" id=9]
-[ext_resource path="res://enemies/basic/BasicEnemyLight.gd" type="Script" id=10]
+[ext_resource path="res://enemies/basic/BasicEnemyDark.gd" type="Script" id=10]
 
-[sub_resource type="AtlasTexture" id=1]
+[sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 2 )
 region = Rect2( 0, 0, 32, 16 )
 
-[sub_resource type="AtlasTexture" id=2]
+[sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 2 )
 region = Rect2( 32, 0, 32, 16 )
 
-[sub_resource type="SpriteFrames" id=3]
+[sub_resource type="SpriteFrames" id=8]
 animations = [ {
-"frames": [ SubResource( 1 ), SubResource( 2 ) ],
+"frames": [ SubResource( 6 ), SubResource( 7 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -38,13 +38,13 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 20, 8 )
 
-[node name="BasicEnemyLight" instance=ExtResource( 1 )]
+[node name="BasicEnemyDark" instance=ExtResource( 1 )]
 script = ExtResource( 10 )
-health_points = 12
+health_points = 5
 
 [node name="AnimatedSprite" parent="." index="0"]
 scale = Vector2( 3.2, 3.2 )
-frames = SubResource( 3 )
+frames = SubResource( 8 )
 frame = 1
 playing = true
 
@@ -54,7 +54,7 @@ frames = SubResource( 5 )
 
 [node name="Area2D" parent="." index="2"]
 collision_layer = 2
-collision_mask = 8
+collision_mask = 4
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
 position = Vector2( 0, 1 )

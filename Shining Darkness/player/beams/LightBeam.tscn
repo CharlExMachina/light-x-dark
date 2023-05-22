@@ -71,6 +71,9 @@ scale_curve = SubResource( 7 )
 color_ramp = SubResource( 5 )
 
 [node name="LightBeam" instance=ExtResource( 2 )]
+collision_layer = 4
+collision_mask = 0
+damage_value = 5
 movement_speed = 600.0
 
 [node name="CollisionShape2D" parent="." index="0"]
