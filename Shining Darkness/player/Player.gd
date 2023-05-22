@@ -68,13 +68,13 @@ func _handle_mode_switch() -> void:
 
 
 func _set_light_mode_hitbox() -> void:
-	_hitbox.set_collision_mask_bit(3, true) # enables collision with dark beams
-	_hitbox.set_collision_mask_bit(2, false) # disables collision with light beams
+	_hitbox.set_collision_mask_bit(4, true) # enables collision with dark beams
+	_hitbox.set_collision_mask_bit(5, false) # disables collision with light beams
 
 
 func _set_dark_mode_hitbox() -> void:
-	_hitbox.set_collision_mask_bit(2, true) # enables collision with light beams
-	_hitbox.set_collision_mask_bit(3, false) # disables collision with dark beams
+	_hitbox.set_collision_mask_bit(5, true) # enables collision with light beams
+	_hitbox.set_collision_mask_bit(4, false) # disables collision with dark beams
 
 
 func _shoot_beam() -> void:
@@ -111,3 +111,7 @@ func _on_LightBeamDelay_timeout() -> void:
 
 func _on_DarkBeamDelay_timeout() -> void:
 	_can_shoot_dark_beam = true
+
+
+func _on_Hitbox_area_entered(area: Area2D) -> void:
+	pass
