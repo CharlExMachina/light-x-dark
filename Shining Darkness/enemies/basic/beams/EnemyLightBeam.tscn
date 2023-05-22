@@ -6,6 +6,7 @@
 
 [node name="EnemyLightBeam" instance=ExtResource( 1 )]
 collision_layer = 16
+damage_value = 5
 movement_speed = -300.0
 
 [node name="Sprite" parent="." index="1"]

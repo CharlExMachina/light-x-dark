@@ -4,6 +4,7 @@ signal on_hp_changed
 signal on_destroyed
 
 export(float) var movement_speed = 40.0
+export(float) var hp = 100.0
 
 enum AttackMode {
 	LIGHT_MODE
@@ -25,6 +26,7 @@ var _sprite_size: float
 var _can_shoot_light_beam: bool = true
 var _can_shoot_dark_beam: bool = true
 var _attack_mode = AttackMode.LIGHT_MODE
+var _max_hp = hp
 
 var x_acc = 0.0
 var y_acc = 0.0
@@ -114,4 +116,16 @@ func _on_DarkBeamDelay_timeout() -> void:
 
 
 func _on_Hitbox_area_entered(area: Area2D) -> void:
-	pass
+	# It's late at night and I'm half asleep, don't ask me how it works...
+	# just accept the fact that it does work
+	if _attack_mode == AttackMode.LIGHT_MODE:
+		if get_collision_mask_bit(5) == area.get_collision_layer_bit(5):
+			return
+
+	if _attack_mode == AttackMode.DARK_MODE:
+		if get_collision_mask_bit(4) == area.get_collision_layer_bit(4):
+			return
+
+	var damage = area.damage_value
+	hp -= damage
+	emit_signal("on_hp_changed", hp, _max_hp)
