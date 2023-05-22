@@ -9,6 +9,8 @@
 radius = 4.0
 
 [node name="DarkBeam" instance=ExtResource( 1 )]
+collision_layer = 8
+collision_mask = 2
 script = ExtResource( 3 )
 movement_speed = 900.0
 
@@ -34,3 +36,5 @@ modulate = Color( 3, 3, 3, 1 )
 position = Vector2( 0, -3 )
 scale = Vector2( 0.985, 0.839 )
 texture = ExtResource( 2 )
+
+[connection signal="area_entered" from="." to="." method="_on_DarkBeam_area_entered"]
