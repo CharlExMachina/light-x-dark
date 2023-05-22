@@ -5,6 +5,7 @@
 [ext_resource path="res://enemies/basic/beams/sprites/enemy_dark_beam_interior-export.png" type="Texture" id=3]
 
 [node name="EnemyLightBeam" instance=ExtResource( 1 )]
+collision_layer = 4
 movement_speed = -300.0
 
 [node name="Sprite" parent="." index="1"]
@@ -19,3 +20,5 @@ modulate = Color( 2.2, 2.2, 2.2, 1 )
 position = Vector2( -9.53674e-07, 4.76837e-07 )
 texture = ExtResource( 3 )
 hframes = 2
+
+[connection signal="area_entered" from="." to="." method="_on_EnemyLightBeam_area_entered"]
