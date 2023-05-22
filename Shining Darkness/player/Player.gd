@@ -13,6 +13,7 @@ enum AttackMode {
 onready var _ship_sprite = $PlayerShipSprite
 onready var _dark_beam_timer = $DarkBeamDelay
 onready var _light_beam_timer = $LightBeamDelay
+onready var _hitbox = $Hitbox
 
 var _light_beam_scene = preload("res://player/beams/LightBeam.tscn")
 var _dark_beam_scene = preload("res://player/beams/DarkBeam.tscn")
@@ -32,6 +33,9 @@ func _ready() -> void:
 	_x_limits = get_viewport_rect().size.x
 	var ship_sprite_frame_width = _ship_sprite.get_rect().size.x * _ship_sprite.transform.get_scale().x / 2.0
 	_sprite_size = ship_sprite_frame_width
+
+	# light mode default
+	_set_light_mode_hitbox()
 
 
 func _process(delta: float) -> void:
@@ -56,9 +60,21 @@ func _handle_mode_switch() -> void:
 	if (Input.is_action_just_pressed("light_mode_switch") and not _attack_mode == AttackMode.LIGHT_MODE):
 		_attack_mode = AttackMode.LIGHT_MODE
 		_ship_sprite.switch_to_light_mode()
+		_set_light_mode_hitbox()
 	elif (Input.is_action_just_pressed("dark_mode_switch") and not _attack_mode == AttackMode.DARK_MODE):
 		_attack_mode = AttackMode.DARK_MODE
 		_ship_sprite.switch_to_dark_mode()
+		_set_dark_mode_hitbox()
+
+
+func _set_light_mode_hitbox() -> void:
+	_hitbox.set_collision_mask_bit(3, true) # enables collision with dark beams
+	_hitbox.set_collision_mask_bit(2, false) # disables collision with light beams
+
+
+func _set_dark_mode_hitbox() -> void:
+	_hitbox.set_collision_mask_bit(2, true) # enables collision with light beams
+	_hitbox.set_collision_mask_bit(3, false) # disables collision with dark beams
 
 
 func _shoot_beam() -> void:
@@ -70,9 +86,22 @@ func _shoot_beam() -> void:
 		_light_beam_timer.start()
 	elif _can_shoot_dark_beam and _attack_mode == AttackMode.DARK_MODE:
 		_can_shoot_dark_beam = false
-		var beam_instance = _dark_beam_scene.instance()
-		get_parent().add_child(beam_instance)
-		beam_instance.position = position - Vector2(0, 20)
+
+		var beam_instance_center = _dark_beam_scene.instance()
+		var beam_instance_left = _dark_beam_scene.instance()
+		var beam_instance_right = _dark_beam_scene.instance()
+
+		get_parent().add_child(beam_instance_center)
+		get_parent().add_child(beam_instance_left)
+		get_parent().add_child(beam_instance_right)
+
+		beam_instance_center.position = position - Vector2(0, 20)
+		beam_instance_left.position = position - Vector2(10, 20)
+		beam_instance_right.position = position - Vector2(-10, 20)
+
+		beam_instance_left.rotation_degrees = -35.0
+		beam_instance_right.rotation_degrees = 35.0
+
 		_dark_beam_timer.start()
 
 

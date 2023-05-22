@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://stage_1/sprites/parallax_space_backgound.png" type="Texture" id=2]
 [ext_resource path="res://stage_1/sprites/parallax_space_ring_planet.png" type="Texture" id=3]
 [ext_resource path="res://default_env.tres" type="Environment" id=4]
+[ext_resource path="res://enemies/basic/BasicEnemyLight.tscn" type="PackedScene" id=5]
+[ext_resource path="res://enemies/basic/beams/EnemyDarkBeam.tscn" type="PackedScene" id=6]
+[ext_resource path="res://enemies/basic/beams/EnemyLightBeam.tscn" type="PackedScene" id=7]
+[ext_resource path="res://enemies/basic/BasicEnemyDark.tscn" type="PackedScene" id=8]
 
 [node name="Stage1" type="Node"]
 
@@ -28,10 +32,45 @@ expand = true
 stretch_mode = 5
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 248, 517 )
+position = Vector2( 228, 514 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 4 )
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 513, 300 )
+[node name="BasicEnemyDark" parent="." instance=ExtResource( 8 )]
+position = Vector2( 446, 130 )
+
+[node name="BasicEnemyDark2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 451, 279 )
+
+[node name="BasicEnemyDark3" parent="." instance=ExtResource( 8 )]
+position = Vector2( 982, 186 )
+
+[node name="BasicEnemyDark4" parent="." instance=ExtResource( 8 )]
+position = Vector2( 743, 187 )
+
+[node name="BasicEnemyLight" parent="." instance=ExtResource( 5 )]
+position = Vector2( 232, 90 )
+z_index = 0
+
+[node name="BasicEnemyLight3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 610, 126 )
+z_index = 0
+
+[node name="BasicEnemyLight4" parent="." instance=ExtResource( 5 )]
+position = Vector2( 248, 307 )
+z_index = 0
+
+[node name="BasicEnemyLight5" parent="." instance=ExtResource( 5 )]
+position = Vector2( 742, 261 )
+z_index = 0
+
+[node name="BasicEnemyLight2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 743, 76 )
+z_index = 0
+
+[node name="EnemyDarkBeam" parent="." instance=ExtResource( 6 )]
+position = Vector2( 230, 136 )
+
+[node name="EnemyLightBeam" parent="." instance=ExtResource( 7 )]
+position = Vector2( 224, 32 )
