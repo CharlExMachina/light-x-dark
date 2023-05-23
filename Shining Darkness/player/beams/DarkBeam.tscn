@@ -6,7 +6,7 @@
 [ext_resource path="res://player/beams/sounds/placeholder.wav" type="AudioStream" id=4]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 4.0
+radius = 6.0
 
 [sub_resource type="Curve" id=3]
 _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.0533673 ), -2.77918, 0.0, 0, 0 ]
@@ -40,23 +40,23 @@ shape = SubResource( 1 )
 
 [node name="Sprite" parent="." index="1"]
 modulate = Color( 0.580392, 0.290196, 2, 1 )
-scale = Vector2( 1.5, 1.5 )
+scale = Vector2( 1.8, 1.8 )
 texture = ExtResource( 2 )
 
 [node name="ShootSound" parent="." index="4"]
 stream = ExtResource( 4 )
-volume_db = -11.283
+volume_db = -14.845
 
 [node name="Sprite2" type="Sprite" parent="." index="5"]
 modulate = Color( 2.5, 2.5, 2.5, 1 )
 position = Vector2( 0, -1 )
-scale = Vector2( 1.072, 1.238 )
+scale = Vector2( 1.372, 1.538 )
 texture = ExtResource( 2 )
 
 [node name="Sprite3" type="Sprite" parent="." index="6"]
 modulate = Color( 3, 3, 3, 1 )
 position = Vector2( 0, -3 )
-scale = Vector2( 0.985, 0.839 )
+scale = Vector2( 1.285, 1.139 )
 texture = ExtResource( 2 )
 
 [node name="CollisionParticle" type="Particles2D" parent="." index="7"]
