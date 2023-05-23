@@ -45,7 +45,7 @@ texture = ExtResource( 2 )
 
 [node name="ShootSound" parent="." index="4"]
 stream = ExtResource( 4 )
-volume_db = -9.675
+volume_db = -11.283
 
 [node name="Sprite2" type="Sprite" parent="." index="5"]
 modulate = Color( 2.5, 2.5, 2.5, 1 )
