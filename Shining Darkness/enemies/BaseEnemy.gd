@@ -9,3 +9,5 @@ var _should_follow_path: bool = true
 func _process(delta: float) -> void:
 	if _should_follow_path:
 		offset += movement_speed * delta
+		if unit_offset >= 1.0:
+			queue_free()
