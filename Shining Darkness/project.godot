@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Node",
+"class": "EnemyRound",
+"language": "GDScript",
+"path": "res://common/stages/enemy_round/EnemyRound.gd"
+} ]
+_global_script_class_icons={
+"EnemyRound": ""
+}
+
 [application]
 
 config/name="Shining Darkness"
