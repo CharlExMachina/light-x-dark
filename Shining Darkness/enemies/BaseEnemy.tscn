@@ -7,6 +7,7 @@
 [node name="BaseEnemy" type="PathFollow2D"]
 z_index = 4
 rotate = false
+loop = false
 script = ExtResource( 1 )
 movement_speed = 150.0
 

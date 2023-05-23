@@ -47,7 +47,6 @@ beam_scene = ExtResource( 11 )
 [node name="AnimatedSprite" parent="." index="0"]
 scale = Vector2( 3.2, 3.2 )
 frames = SubResource( 8 )
-frame = 1
 playing = true
 
 [node name="ExplosionAnimation" parent="." index="1"]
