@@ -33,5 +33,5 @@ func _on_DarkBeam_area_entered(area: Area2D) -> void:
 	$Sprite2.hide()
 	$Sprite3.hide()
 	$CollisionParticle.emitting = true
-	yield(get_tree().create_timer(0.5), "timeout")
+	yield(get_tree().create_timer(0.5), "timeout") # necessary because particles do not have an on_finished signal :(
 	queue_free()
