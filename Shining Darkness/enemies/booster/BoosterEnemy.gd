@@ -15,6 +15,16 @@ func _process(delta: float) -> void:
 		$SmallParticles.emitting = false
 
 
+func _die() -> void:
+	$AnimatedSprite.hide()
+
+	$Area2D.set_deferred("monitoring", false)
+	$Area2D.set_deferred("monitorable", false)
+	$ExplosionAnimation.play("default")
+
+	# a hack used to preserve the natural movement of the trail particles, that way these won't stop unnaturally
+	_use_reverse_offset
+
 func _on_TimeToDisappear_timeout() -> void:
 	queue_free()
 
@@ -27,21 +37,14 @@ func _on_Area2D_area_entered(area: Area2D) -> void:
 		var is_in_light_mode = area.get_collision_mask_bit(4)
 
 		if not is_in_light_mode:
-			queue_free()
+			_die()
 	else:
 		var damage = area.damage_value
 
 		health_points -= damage
 
 		if (health_points <= 0):
-			$AnimatedSprite.hide()
-
-			$Area2D.set_deferred("monitoring", false)
-			$Area2D.set_deferred("monitorable", false)
-			$ExplosionAnimation.play("default")
-
-			# a hack used to preserve the natural movement of the trail particles, that way these won't stop unnaturally
-			_use_reverse_offset
+			_die()
 
 
 func _on_ExplosionAnimation_animation_finished() -> void:
