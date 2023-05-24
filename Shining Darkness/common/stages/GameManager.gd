@@ -18,5 +18,4 @@ func _ready() -> void:
 
 
 func _on_Player_on_hp_changed(hp, max_hp) -> void:
-	print(hp, " ", max_hp, " ", hp / max_hp)
 	_health_bar.value = (hp / max_hp) * 100.0
