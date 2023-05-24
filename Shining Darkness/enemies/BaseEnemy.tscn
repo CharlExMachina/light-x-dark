@@ -3,6 +3,7 @@
 [ext_resource path="res://enemies/BaseEnemy.gd" type="Script" id=1]
 
 [sub_resource type="CircleShape2D" id=1]
+radius = 15.0
 
 [node name="BaseEnemy" type="PathFollow2D"]
 z_index = 4

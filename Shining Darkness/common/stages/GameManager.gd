@@ -3,6 +3,7 @@ extends Node
 onready var _health_bar = get_node("%HealthBar") as TextureProgress
 onready var _spawner = get_node("%Spawner")
 
+
 func _ready() -> void:
 	var children = _spawner.get_children()
 
@@ -16,7 +17,5 @@ func _ready() -> void:
 			yield(get_tree().create_timer(current_round.time_between_spawns), "timeout")
 
 
-
 func _on_Player_on_hp_changed(hp, max_hp) -> void:
-	print(hp, " ", max_hp, " ", hp / max_hp)
 	_health_bar.value = (hp / max_hp) * 100.0

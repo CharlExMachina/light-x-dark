@@ -39,6 +39,7 @@ frames = SubResource( 1 )
 shape = SubResource( 2 )
 
 [node name="Hitbox" type="Area2D" parent="."]
+collision_mask = 0
 
 [node name="HitboxShape" type="CollisionShape2D" parent="Hitbox"]
 modulate = Color( 0.509804, 0, 0.713726, 1 )
