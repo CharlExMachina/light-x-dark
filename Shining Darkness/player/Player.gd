@@ -116,6 +116,7 @@ func _on_DarkBeamDelay_timeout() -> void:
 
 
 func _on_Hitbox_area_entered(area: Area2D) -> void:
+	print("SHAZAM!!!!", area)
 	# It's late at night and I'm half asleep, don't ask me how it works...
 	# just accept the fact that it does work
 	if _attack_mode == AttackMode.LIGHT_MODE:

@@ -3,8 +3,8 @@ extends PathFollow2D
 export(int) var health_points = 10
 export(float) var movement_speed = 50.0
 
-#var _should_follow_path: bool = true
 var _use_reverse_offset: bool = false
+
 
 func _process(delta: float) -> void:
 #	if _should_follow_path:
@@ -20,20 +20,28 @@ func _on_TimeToDisappear_timeout() -> void:
 
 
 func _on_Area2D_area_entered(area: Area2D) -> void:
-	# lots of WET coding. But I have no time for refactors :(
-	var damage = area.damage_value
+	# first, check if its colliding with the player character
+	var is_in_player_layer = area.get_collision_layer_bit(0)
 
-	health_points -= damage
+	if is_in_player_layer:
+		var is_in_light_mode = area.get_collision_mask_bit(4)
 
-	if (health_points <= 0):
-		$AnimatedSprite.hide()
+		if not is_in_light_mode:
+			queue_free()
+	else:
+		var damage = area.damage_value
 
-		$Area2D.set_deferred("monitoring", false)
-		$Area2D.set_deferred("monitorable", false)
-		$ExplosionAnimation.play("default")
+		health_points -= damage
 
-		# a hack used to preserve the natural movement of the trail particles, that way these won't stop unnaturally
-		_use_reverse_offset
+		if (health_points <= 0):
+			$AnimatedSprite.hide()
+
+			$Area2D.set_deferred("monitoring", false)
+			$Area2D.set_deferred("monitorable", false)
+			$ExplosionAnimation.play("default")
+
+			# a hack used to preserve the natural movement of the trail particles, that way these won't stop unnaturally
+			_use_reverse_offset
 
 
 func _on_ExplosionAnimation_animation_finished() -> void:

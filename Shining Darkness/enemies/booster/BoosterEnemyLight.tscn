@@ -1,11 +1,11 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
-[ext_resource path="res://enemies/booster/sprites/enemy4.png" type="Texture" id=1]
-[ext_resource path="res://enemies/booster/sprites/enemy1.png" type="Texture" id=2]
-[ext_resource path="res://enemies/booster/sprites/enemy2.png" type="Texture" id=3]
-[ext_resource path="res://enemies/booster/sprites/enemy5.png" type="Texture" id=4]
+[ext_resource path="res://enemies/booster/sprites/light/enemy4.png" type="Texture" id=1]
+[ext_resource path="res://enemies/booster/sprites/light/enemy1.png" type="Texture" id=2]
+[ext_resource path="res://enemies/booster/sprites/light/enemy2.png" type="Texture" id=3]
+[ext_resource path="res://enemies/booster/sprites/light/enemy5.png" type="Texture" id=4]
 [ext_resource path="res://enemies/BaseEnemy.tscn" type="PackedScene" id=5]
-[ext_resource path="res://enemies/booster/sprites/enemy3.png" type="Texture" id=6]
+[ext_resource path="res://enemies/booster/sprites/light/enemy3.png" type="Texture" id=6]
 [ext_resource path="res://player/beams/sprites/trace_03.png" type="Texture" id=7]
 [ext_resource path="res://player/beams/sprites/trace_01.png" type="Texture" id=8]
 [ext_resource path="res://player/beams/sprites/trace_04.png" type="Texture" id=9]
@@ -20,6 +20,7 @@
 [ext_resource path="res://enemies/common/sprites/explosion_2/hits_5_2.png" type="Texture" id=18]
 [ext_resource path="res://enemies/common/sprites/explosion_2/hits_5_4.png" type="Texture" id=19]
 [ext_resource path="res://enemies/booster/sounds/booster_ship.wav" type="AudioStream" id=20]
+[ext_resource path="res://enemies/booster/BoosterEnemyCollider.gd" type="Script" id=21]
 
 [sub_resource type="Curve" id=2]
 _data = [ Vector2( 0, 0.65 ), 0.0, 2.85626, 0, 0, Vector2( 0.597973, 0.35 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.0613636 ), -5.11919, 0.0, 0, 0 ]
@@ -85,7 +86,7 @@ animations = [ {
 "speed": 18.0
 } ]
 
-[node name="BoosterEnemy" instance=ExtResource( 5 )]
+[node name="BoosterEnemyLight" instance=ExtResource( 5 )]
 rotate = true
 script = ExtResource( 12 )
 health_points = 3
@@ -116,6 +117,7 @@ texture = ExtResource( 11 )
 rotation = 3.14159
 scale = Vector2( 2.3, 2.3 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="ExplosionAnimation" parent="." index="3"]
@@ -123,8 +125,9 @@ scale = Vector2( 4, 4 )
 frames = SubResource( 7 )
 
 [node name="Area2D" parent="." index="4"]
-collision_layer = 18
-collision_mask = 8
+collision_layer = 16
+collision_mask = 9
+script = ExtResource( 21 )
 
 [node name="TimeToDisappear" type="Timer" parent="." index="6"]
 wait_time = 5.0
