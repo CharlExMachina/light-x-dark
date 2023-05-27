@@ -1,29 +1,18 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://stage_1/sprites/parallax_space_backgound.png" type="Texture" id=2]
 [ext_resource path="res://stage_1/sprites/parallax_space_ring_planet.png" type="Texture" id=3]
 [ext_resource path="res://default_env.tres" type="Environment" id=4]
+[ext_resource path="res://enemies/trigun/TrigunEnemyLight.tscn" type="PackedScene" id=5]
 [ext_resource path="res://common/stages/enemy_round/EnemyRound.tscn" type="PackedScene" id=6]
-[ext_resource path="res://enemies/booster/BoosterEnemyLight.tscn" type="PackedScene" id=8]
 [ext_resource path="res://common/stages/GameManager.gd" type="Script" id=9]
 [ext_resource path="res://player/ui/hp_bar/hp_bar_inner_v2.png" type="Texture" id=10]
 [ext_resource path="res://player/ui/hp_bar/hp_bar_outer_v2.png" type="Texture" id=11]
-[ext_resource path="res://enemies/booster/BoosterEnemyDark.tscn" type="PackedScene" id=12]
 
-[sub_resource type="Curve2D" id=1]
+[sub_resource type="Curve2D" id=5]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 861, -30, 0, 0, 0, 0, 861, 828 )
-}
-
-[sub_resource type="Curve2D" id=2]
-_data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 1203, -38, 0, 0, 0, 0, 2502, 796 )
-}
-
-[sub_resource type="Curve2D" id=4]
-_data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 916, 678, 0, 0, 0, 0, 2540, 110 )
+"points": PoolVector2Array( 0, 0, 0, 0, 1388, -38, 0, 0, 0, 0, 995, 143 )
 }
 
 [node name="Stage1" type="Node"]
@@ -85,35 +74,11 @@ __meta__ = {
 [node name="Spawner" type="Node" parent="."]
 unique_name_in_owner = true
 
-[node name="EnemyRound2" parent="Spawner" instance=ExtResource( 6 )]
-spawn_delay_in_seconds = 1.2
-time_between_spawns = 1.0
-enemy_units_to_spawn = [ ExtResource( 8 ) ]
+[node name="EnemyRound" parent="Spawner" instance=ExtResource( 6 )]
+enemy_units_to_spawn = [ ExtResource( 5 ) ]
 
-[node name="Path2D" parent="Spawner/EnemyRound2" index="0"]
-self_modulate = Color( 0.188235, 0.698039, 0.156863, 0.701961 )
-position = Vector2( -182, -8 )
-curve = SubResource( 1 )
-
-[node name="EnemyRound3" parent="Spawner" instance=ExtResource( 6 )]
-spawn_delay_in_seconds = 1.2
-time_between_spawns = 1.0
-enemy_units_to_spawn = [ ExtResource( 8 ) ]
-
-[node name="Path2D" parent="Spawner/EnemyRound3" index="0"]
-self_modulate = Color( 0.501961, 1, 0.894118, 0.701961 )
-position = Vector2( -1169, -52 )
-curve = SubResource( 2 )
-
-[node name="EnemyRound4" parent="Spawner" instance=ExtResource( 6 )]
-spawn_delay_in_seconds = 1.2
-time_between_spawns = 1.0
-enemy_units_to_spawn = [ ExtResource( 12 ) ]
-
-[node name="Path2D" parent="Spawner/EnemyRound4" index="0"]
-self_modulate = Color( 1, 0.956863, 0.501961, 0.701961 )
-position = Vector2( -1147, -51 )
-curve = SubResource( 4 )
+[node name="Path2D" parent="Spawner/EnemyRound" index="0"]
+curve = SubResource( 5 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 228, 514 )
@@ -123,6 +88,4 @@ environment = ExtResource( 4 )
 
 [connection signal="on_hp_changed" from="Player" to="." method="_on_Player_on_hp_changed"]
 
-[editable path="Spawner/EnemyRound2"]
-[editable path="Spawner/EnemyRound3"]
-[editable path="Spawner/EnemyRound4"]
+[editable path="Spawner/EnemyRound"]

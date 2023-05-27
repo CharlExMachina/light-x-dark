@@ -37,7 +37,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 42, 11.5 )
+extents = Vector2( 42, 17 )
 
 [node name="BasicEnemyLight" instance=ExtResource( 1 )]
 script = ExtResource( 10 )
