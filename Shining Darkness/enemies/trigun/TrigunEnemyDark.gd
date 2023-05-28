@@ -41,7 +41,7 @@ func _on_TimeToStopShooting_timeout() -> void:
 
 
 func _on_Area2D_area_entered(area: Area2D) -> void:
-	if area.get_collision_layer_bit(2):
+	if area.get_collision_layer_bit(3):
 		return
 
 	var damage = area.damage_value

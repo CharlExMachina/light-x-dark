@@ -46,7 +46,7 @@ modulate = Color( 0.509804, 0, 0.713726, 1 )
 shape = SubResource( 3 )
 
 [node name="LightBeamDelay" type="Timer" parent="."]
-wait_time = 0.643
+wait_time = 0.587
 
 [node name="DarkBeamDelay" type="Timer" parent="."]
 wait_time = 0.08
