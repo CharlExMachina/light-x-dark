@@ -15,6 +15,8 @@ movement_speed = 150.0
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 
 [node name="ExplosionAnimation" type="AnimatedSprite" parent="."]
+visible = false
+z_index = -1
 
 [node name="Area2D" type="Area2D" parent="."]
 

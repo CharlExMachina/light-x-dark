@@ -1,5 +1,6 @@
 extends "res://enemies/BaseEnemy.gd"
 
+
 func _on_TimeToShoot_timeout() -> void:
 	var instanced_light_beam = beam_scene.instance()
 	get_parent().add_child(instanced_light_beam)

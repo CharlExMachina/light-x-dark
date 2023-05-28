@@ -125,6 +125,7 @@ texture = ExtResource( 11 )
 rotation = 3.14159
 scale = Vector2( 2.3, 2.3 )
 frames = SubResource( 8 )
+frame = 1
 playing = true
 
 [node name="ExplosionAnimation" parent="." index="3"]
