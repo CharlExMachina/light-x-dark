@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=2]
+[gd_scene load_steps=83 format=2]
 
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://stage_1/sprites/parallax_space_backgound.png" type="Texture" id=2]
@@ -14,6 +14,42 @@
 [ext_resource path="res://enemies/basic/BasicEnemyLight.tscn" type="PackedScene" id=12]
 [ext_resource path="res://enemies/booster/BoosterEnemyDark.tscn" type="PackedScene" id=13]
 [ext_resource path="res://enemies/booster/BoosterEnemyLight.tscn" type="PackedScene" id=14]
+[ext_resource path="res://stage_1/sprites/parallax_space_far_planets.png" type="Texture" id=15]
+[ext_resource path="res://stage_1/sprites/bg-stars.png" type="Texture" id=16]
+
+[sub_resource type="Shader" id=69]
+code = "shader_type canvas_item;
+
+uniform vec2 motion = vec2(0.0, -100);
+uniform float scale = 1.0;
+uniform vec2 offset = vec2(0.0);
+
+void vertex(){
+	UV = (VERTEX + offset + TIME * motion) * TEXTURE_PIXEL_SIZE * (1.0/scale);
+}"
+
+[sub_resource type="ShaderMaterial" id=70]
+shader = SubResource( 69 )
+shader_param/motion = Vector2( 0, -30 )
+shader_param/scale = 1.0
+shader_param/offset = Vector2( 0, 0 )
+
+[sub_resource type="Shader" id=71]
+code = "shader_type canvas_item;
+
+uniform vec2 motion = vec2(0.0, -100);
+uniform float scale = 1.0;
+uniform vec2 offset = vec2(0.0);
+
+void vertex(){
+	UV = (VERTEX + offset + TIME * motion) * TEXTURE_PIXEL_SIZE * (1.0/scale);
+}"
+
+[sub_resource type="ShaderMaterial" id=72]
+shader = SubResource( 71 )
+shader_param/motion = Vector2( 0, -58 )
+shader_param/scale = 1.916
+shader_param/offset = Vector2( 0, 0 )
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -312,7 +348,7 @@ _data = {
 
 [sub_resource type="Curve2D" id=61]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 211, -14, 0, 0, 0, 0, 920, 733 )
+"points": PoolVector2Array( 0, 0, 0, 0, 211, -14, 0, 0, 0, 0, 963, 762 )
 }
 
 [sub_resource type="Curve2D" id=62]
@@ -340,19 +376,74 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="Stars2" type="TextureRect" parent="CanvasLayer"]
+material = SubResource( 70 )
+margin_left = 328.0
+margin_top = -1.0
+margin_right = 1610.0
+margin_bottom = 718.0
+texture = ExtResource( 16 )
+expand = true
+stretch_mode = 2
+flip_h = true
+flip_v = true
+
+[node name="Stars5" type="TextureRect" parent="CanvasLayer"]
+material = SubResource( 70 )
+margin_left = -341.0
+margin_top = -12.0
+margin_right = 941.0
+margin_bottom = 707.0
+texture = ExtResource( 16 )
+expand = true
+stretch_mode = 2
+flip_h = true
+flip_v = true
+
+[node name="Stars3" type="TextureRect" parent="CanvasLayer"]
+self_modulate = Color( 2.5, 1, 2.5, 1 )
+material = SubResource( 72 )
+margin_left = 546.0
+margin_top = -4.0
+margin_right = 1828.0
+margin_bottom = 715.0
+texture = ExtResource( 16 )
+expand = true
+stretch_mode = 2
+flip_h = true
+flip_v = true
+
+[node name="Stars4" type="TextureRect" parent="CanvasLayer"]
+self_modulate = Color( 2.6, 2.6, 1, 1 )
+material = SubResource( 72 )
+margin_left = -465.0
+margin_top = -5.0
+margin_right = 817.0
+margin_bottom = 714.0
+texture = ExtResource( 16 )
+expand = true
+stretch_mode = 2
+flip_h = true
+flip_v = true
+
 [node name="Planet" type="TextureRect" parent="CanvasLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 753.0
-margin_top = 1.0
-margin_right = -9.0
-margin_bottom = -273.0
+margin_left = 1060.0
+margin_top = 25.0
+margin_right = 298.0
+margin_bottom = -249.0
+rect_scale = Vector2( 0.584689, 0.584689 )
 texture = ExtResource( 3 )
 expand = true
 stretch_mode = 5
-__meta__ = {
-"_edit_lock_": true
-}
+
+[node name="Moons" type="TextureRect" parent="CanvasLayer"]
+margin_left = 974.0
+margin_top = 107.0
+margin_right = 1246.0
+margin_bottom = 267.0
+texture = ExtResource( 15 )
 
 [node name="UILayer" type="CanvasLayer" parent="."]
 
@@ -802,6 +893,7 @@ enemy_units_to_spawn = [ ExtResource( 13 ) ]
 curve = SubResource( 59 )
 
 [node name="EnemyRound60" parent="Spawner" instance=ExtResource( 6 )]
+spawn_delay_in_seconds = 2.0
 enemy_units_to_spawn = [ ExtResource( 14 ) ]
 
 [node name="Path2D" parent="Spawner/EnemyRound60" index="0"]
