@@ -16,7 +16,7 @@
 [ext_resource path="res://enemies/booster/BoosterEnemyLight.tscn" type="PackedScene" id=14]
 [ext_resource path="res://stage_1/sprites/parallax_space_far_planets.png" type="Texture" id=15]
 [ext_resource path="res://stage_1/sprites/bg-stars.png" type="Texture" id=16]
-[ext_resource path="res://Dream about space.mp3" type="AudioStream" id=17]
+[ext_resource path="res://GAME_JAM_SOUNDTRACK.mp3" type="AudioStream" id=17]
 [ext_resource path="res://stage_1/Camera.gd" type="Script" id=18]
 [ext_resource path="res://stage_1/DamageRect.gd" type="Script" id=19]
 [ext_resource path="res://player_damage.wav" type="AudioStream" id=20]
@@ -436,7 +436,7 @@ position = Vector2( 2146, -806 )
 rotation = 1.17226
 
 [node name="AnimatedSprite" parent="Camera2D/Path2D/BoosterEnemyDark" index="2"]
-frame = 3
+frame = 4
 
 [node name="AudioStreamPlayer" parent="Camera2D/Path2D/BoosterEnemyDark" index="7"]
 volume_db = -80.0
@@ -446,7 +446,7 @@ position = Vector2( 2146, -806 )
 rotation = 1.17226
 
 [node name="AnimatedSprite" parent="Camera2D/Path2D/BoosterEnemyLight" index="2"]
-frame = 1
+frame = 2
 
 [node name="AudioStreamPlayer" parent="Camera2D/Path2D/BoosterEnemyLight" index="7"]
 volume_db = -80.0

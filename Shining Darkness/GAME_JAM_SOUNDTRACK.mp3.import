@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/GAME_JAM_SOUNDTRACK.mp3-0ed50768515937893072388ca1679c71.mp3str"
+
+[deps]
+
+source_file="res://GAME_JAM_SOUNDTRACK.mp3"
+dest_files=[ "res://.import/GAME_JAM_SOUNDTRACK.mp3-0ed50768515937893072388ca1679c71.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

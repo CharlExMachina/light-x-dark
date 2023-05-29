@@ -22,6 +22,7 @@ _global_script_class_icons={
 
 config/name="LIGHT X DARK"
 run/main_scene="res://SplashScreen.tscn"
+boot_splash/image="res://vfMGpH.png"
 config/icon="res://icon.png"
 
 [autoload]
