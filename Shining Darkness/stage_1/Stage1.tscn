@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=2]
+[gd_scene load_steps=77 format=2]
 
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://stage_1/sprites/parallax_space_backgound.png" type="Texture" id=2]
@@ -127,7 +127,7 @@ _data = {
 
 [sub_resource type="Curve2D" id=22]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 940, -141, 0, 0, 0, 0, 584, 879 )
+"points": PoolVector2Array( 0, 0, 0, 0, 940, -141, 0, 0, 0, 0, 277, 778 )
 }
 
 [sub_resource type="Curve2D" id=23]
@@ -203,6 +203,126 @@ _data = {
 [sub_resource type="Curve2D" id=39]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 1336, -28, 0, 0, 0, 0, -69, 765 )
+}
+
+[sub_resource type="Curve2D" id=40]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 1016, -45, 0, 0, 0, 0, 689, 154, 0, 0, 0, 0, -98, 121 )
+}
+
+[sub_resource type="Curve2D" id=41]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 48, -81, 0, 0, 0, 0, 55, 131, 0, 0, 0, 0, 744, 178, 0, 0, 0, 0, 1432, 181 )
+}
+
+[sub_resource type="Curve2D" id=42]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 975, -41, 0, 0, 0, 0, 748, 160 )
+}
+
+[sub_resource type="Curve2D" id=43]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -8, -34, 0, 0, 0, 0, 326, 121 )
+}
+
+[sub_resource type="Curve2D" id=44]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 466, -40, 0, 0, 0, 0, 433, 277, 0, 0, 0, 0, 578, 406, 0, 0, 0, 0, 996, 379, 0, 0, 0, 0, 1324, -67 )
+}
+
+[sub_resource type="Curve2D" id=45]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 794, -141, 0, 0, 0, 0, 734, 79, 0, 0, 0, 0, 901, 114, 0, 0, 0, 0, 884, 325, 0, 0, 0, 0, 462, 362, 0, 0, 0, 0, -57, -13 )
+}
+
+[sub_resource type="Curve2D" id=46]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 677, -55, 0, 0, 0, 0, 680, 79 )
+}
+
+[sub_resource type="Curve2D" id=47]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 1352, -22, 0, 0, 0, 0, 1188, 78 )
+}
+
+[sub_resource type="Curve2D" id=48]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -25, -28, 0, 0, 0, 0, 128, 131 )
+}
+
+[sub_resource type="Curve2D" id=49]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -84, 337, 0, 0, 0, 0, 147, 330 )
+}
+
+[sub_resource type="Curve2D" id=50]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 1278, -105, 0, 0, 0, 0, 1255, 26, 0, 0, 0, 0, 1242, 191, 0, 0, 0, 0, 1171, 208, 0, 0, 0, 0, 1009, 278, 0, 0, 0, 0, 818, 347, 0, 0, 0, 0, 594, 331, 0, 0, 0, 0, 431, 279, 0, 0, 0, 0, 218, 277, 0, 0, 0, 0, 38, 301, 0, 0, 0, 0, -55, 269, 0, 0, 0, 0, -51, 50, 0, 0, 0, 0, 96, 100, 0, 0, 0, 0, 325, 124, 0, 0, 0, 0, 539, 120, 0, 0, 0, 0, 769, -53 )
+}
+
+[sub_resource type="Curve2D" id=51]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 43, -117, 0, 0, 0, 0, 1140, 772 )
+}
+
+[sub_resource type="Curve2D" id=52]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 778, -62, 0, 0, 0, 0, 778, 787 )
+}
+
+[sub_resource type="Curve2D" id=53]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 610, -104, 0, 0, 0, 0, 607, 114, 0, 0, 0, 0, 788, 149, 0, 0, 0, 0, 981, 221, 0, 0, 0, 0, 1099, 169, 0, 0, 0, 0, 1363, 31 )
+}
+
+[sub_resource type="Curve2D" id=54]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 1125, -36, 0, 0, 0, 0, 1128, 43 )
+}
+
+[sub_resource type="Curve2D" id=55]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 976, -45, 0, 0, 0, 0, 914, 47 )
+}
+
+[sub_resource type="Curve2D" id=56]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 384, -42, 0, 0, 0, 0, 426, 31 )
+}
+
+[sub_resource type="Curve2D" id=57]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -26, 65, 0, 0, 0, 0, 143, 157 )
+}
+
+[sub_resource type="Curve2D" id=58]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 224, -70, 0, 0, 0, 0, 1026, 775 )
+}
+
+[sub_resource type="Curve2D" id=59]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 1020, -137, 0, 0, 0, 0, 221, 808 )
+}
+
+[sub_resource type="Curve2D" id=60]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -33, 369, 0, 0, 0, 0, 1351, 368 )
+}
+
+[sub_resource type="Curve2D" id=61]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 211, -14, 0, 0, 0, 0, 920, 733 )
+}
+
+[sub_resource type="Curve2D" id=62]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 920, -26, 0, 0, 0, 0, 264, 758 )
+}
+
+[sub_resource type="Curve2D" id=63]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 397.667, -81.0322, 0, 0, 0, 0, 387.114, 749.3 )
 }
 
 [node name="Stage1" type="Node"]
@@ -542,6 +662,175 @@ enemy_units_to_spawn = [ ExtResource( 14 ) ]
 [node name="Path2D" parent="Spawner/EnemyRound38" index="0"]
 curve = SubResource( 39 )
 
+[node name="EnemyRound39" parent="Spawner" instance=ExtResource( 6 )]
+time_between_spawns = 2.0
+enemy_units_to_spawn = [ ExtResource( 8 ), ExtResource( 12 ), ExtResource( 8 ) ]
+
+[node name="Path2D" parent="Spawner/EnemyRound39" index="0"]
+curve = SubResource( 40 )
+
+[node name="EnemyRound40" parent="Spawner" instance=ExtResource( 6 )]
+time_between_spawns = 2.0
+enemy_units_to_spawn = [ ExtResource( 12 ), ExtResource( 8 ), ExtResource( 12 ) ]
+
+[node name="Path2D" parent="Spawner/EnemyRound40" index="0"]
+curve = SubResource( 41 )
+
+[node name="EnemyRound41" parent="Spawner" instance=ExtResource( 6 )]
+enemy_units_to_spawn = [ ExtResource( 5 ) ]
+
+[node name="Path2D" parent="Spawner/EnemyRound41" index="0"]
+self_modulate = Color( 0.890196, 0, 0.0627451, 0.701961 )
+curve = SubResource( 42 )
+
+[node name="EnemyRound42" parent="Spawner" instance=ExtResource( 6 )]
+enemy_units_to_spawn = [ ExtResource( 7 ) ]
+
+[node name="Path2D" parent="Spawner/EnemyRound42" index="0"]
+curve = SubResource( 43 )
+
+[node name="EnemyRound44" parent="Spawner" instance=ExtResource( 6 )]
+enemy_units_to_spawn = [ ExtResource( 7 ) ]
+
+[node name="Path2D" parent="Spawner/EnemyRound44" index="0"]
+self_modulate = Color( 0.0745098, 0.835294, 0.913725, 0.701961 )
+curve = SubResource( 43 )
+
+[node name="EnemyRound43" parent="Spawner" instance=ExtResource( 6 )]
+time_between_spawns = 2.0
+enemy_units_to_spawn = [ ExtResource( 12 ), ExtResource( 12 ), ExtResource( 12 ) ]
+
+[node name="Path2D" parent="Spawner/EnemyRound43" index="0"]
+self_modulate = Color( 0.905882, 0.423529, 0, 0.701961 )
+curve = SubResource( 44 )
+
+[node name="EnemyRound45" parent="Spawner" instance=ExtResource( 6 )]
+time_between_spawns = 2.0
+enemy_units_to_spawn = [ ExtResource( 8 ), ExtResource( 12 ), ExtResource( 12 ) ]
+
+[node name="Path2D" parent="Spawner/EnemyRound45" index="0"]
+self_modulate = Color( 0.905882, 0.423529, 0, 0.701961 )
+curve = SubResource( 45 )
+
+[node name="EnemyRound46" parent="Spawner" instance=ExtResource( 6 )]
+enemy_units_to_spawn = [ ExtResource( 5 ) ]
+
+[node name="Path2D" parent="Spawner/EnemyRound46" index="0"]
+curve = SubResource( 46 )
+
+[node name="EnemyRound47" parent="Spawner" instance=ExtResource( 6 )]
+enemy_units_to_spawn = [ ExtResource( 5 ) ]
+
+[node name="Path2D" parent="Spawner/EnemyRound47" index="0"]
+curve = SubResource( 47 )
+
+[node name="EnemyRound48" parent="Spawner" instance=ExtResource( 6 )]
+enemy_units_to_spawn = [ ExtResource( 5 ) ]
+
+[node name="Path2D" parent="Spawner/EnemyRound48" index="0"]
+curve = SubResource( 48 )
+
+[node name="EnemyRound49" parent="Spawner" instance=ExtResource( 6 )]
+enemy_units_to_spawn = [ ExtResource( 5 ) ]
+
+[node name="Path2D" parent="Spawner/EnemyRound49" index="0"]
+curve = SubResource( 49 )
+
+[node name="EnemyRound50" parent="Spawner" instance=ExtResource( 6 )]
+time_between_spawns = 1.2
+enemy_units_to_spawn = [ ExtResource( 12 ), ExtResource( 12 ), ExtResource( 12 ), ExtResource( 12 ), ExtResource( 12 ), ExtResource( 12 ), ExtResource( 8 ), ExtResource( 8 ), ExtResource( 12 ), ExtResource( 8 ) ]
+
+[node name="Path2D" parent="Spawner/EnemyRound50" index="0"]
+curve = SubResource( 50 )
+
+[node name="EnemyRound51" parent="Spawner" instance=ExtResource( 6 )]
+enemy_units_to_spawn = [ ExtResource( 13 ) ]
+
+[node name="Path2D" parent="Spawner/EnemyRound51" index="0"]
+curve = SubResource( 51 )
+
+[node name="EnemyRound52" parent="Spawner" instance=ExtResource( 6 )]
+spawn_delay_in_seconds = 1.0
+enemy_units_to_spawn = [ ExtResource( 13 ) ]
+
+[node name="Path2D" parent="Spawner/EnemyRound52" index="0"]
+curve = SubResource( 52 )
+
+[node name="EnemyRound53" parent="Spawner" instance=ExtResource( 6 )]
+time_between_spawns = 0.8
+enemy_units_to_spawn = [ ExtResource( 8 ), ExtResource( 8 ), ExtResource( 8 ) ]
+
+[node name="Path2D" parent="Spawner/EnemyRound53" index="0"]
+curve = SubResource( 53 )
+
+[node name="EnemyRound54" parent="Spawner" instance=ExtResource( 6 )]
+enemy_units_to_spawn = [ ExtResource( 7 ) ]
+
+[node name="Path2D" parent="Spawner/EnemyRound54" index="0"]
+curve = SubResource( 54 )
+
+[node name="EnemyRound55" parent="Spawner" instance=ExtResource( 6 )]
+enemy_units_to_spawn = [ ExtResource( 7 ) ]
+
+[node name="Path2D" parent="Spawner/EnemyRound55" index="0"]
+curve = SubResource( 55 )
+
+[node name="EnemyRound56" parent="Spawner" instance=ExtResource( 6 )]
+enemy_units_to_spawn = [ ExtResource( 5 ) ]
+
+[node name="Path2D" parent="Spawner/EnemyRound56" index="0"]
+curve = SubResource( 56 )
+
+[node name="EnemyRound57" parent="Spawner" instance=ExtResource( 6 )]
+enemy_units_to_spawn = [ ExtResource( 5 ) ]
+
+[node name="Path2D" parent="Spawner/EnemyRound57" index="0"]
+curve = SubResource( 57 )
+
+[node name="EnemyRound58" parent="Spawner" instance=ExtResource( 6 )]
+spawn_delay_in_seconds = 1.0
+enemy_units_to_spawn = [ ExtResource( 13 ) ]
+
+[node name="Path2D" parent="Spawner/EnemyRound58" index="0"]
+curve = SubResource( 58 )
+
+[node name="EnemyRound59" parent="Spawner" instance=ExtResource( 6 )]
+spawn_delay_in_seconds = 1.0
+enemy_units_to_spawn = [ ExtResource( 13 ) ]
+
+[node name="Path2D" parent="Spawner/EnemyRound59" index="0"]
+curve = SubResource( 59 )
+
+[node name="EnemyRound60" parent="Spawner" instance=ExtResource( 6 )]
+enemy_units_to_spawn = [ ExtResource( 14 ) ]
+
+[node name="Path2D" parent="Spawner/EnemyRound60" index="0"]
+self_modulate = Color( 1, 0.0588235, 0.654902, 0.701961 )
+curve = SubResource( 60 )
+
+[node name="EnemyRound61" parent="Spawner" instance=ExtResource( 6 )]
+enemy_units_to_spawn = [ ExtResource( 14 ) ]
+
+[node name="Path2D" parent="Spawner/EnemyRound61" index="0"]
+self_modulate = Color( 0.964706, 0.0784314, 0.952941, 0.701961 )
+curve = SubResource( 61 )
+
+[node name="EnemyRound62" parent="Spawner" instance=ExtResource( 6 )]
+enemy_units_to_spawn = [ ExtResource( 14 ) ]
+
+[node name="Path2D" parent="Spawner/EnemyRound62" index="0"]
+self_modulate = Color( 0.964706, 0.0784314, 0.952941, 0.701961 )
+curve = SubResource( 62 )
+
+[node name="EnemyRound63" parent="Spawner" instance=ExtResource( 6 )]
+enemy_units_to_spawn = [ ExtResource( 14 ) ]
+
+[node name="Path2D" parent="Spawner/EnemyRound63" index="0"]
+self_modulate = Color( 0.964706, 0.0784314, 0.952941, 0.701961 )
+position = Vector2( 475.948, 1.82984 )
+scale = Vector2( 0.284289, 1.03453 )
+curve = SubResource( 63 )
+
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 637, 659 )
 
@@ -588,3 +877,28 @@ environment = ExtResource( 4 )
 [editable path="Spawner/EnemyRound36"]
 [editable path="Spawner/EnemyRound37"]
 [editable path="Spawner/EnemyRound38"]
+[editable path="Spawner/EnemyRound39"]
+[editable path="Spawner/EnemyRound40"]
+[editable path="Spawner/EnemyRound41"]
+[editable path="Spawner/EnemyRound42"]
+[editable path="Spawner/EnemyRound44"]
+[editable path="Spawner/EnemyRound43"]
+[editable path="Spawner/EnemyRound45"]
+[editable path="Spawner/EnemyRound46"]
+[editable path="Spawner/EnemyRound47"]
+[editable path="Spawner/EnemyRound48"]
+[editable path="Spawner/EnemyRound49"]
+[editable path="Spawner/EnemyRound50"]
+[editable path="Spawner/EnemyRound51"]
+[editable path="Spawner/EnemyRound52"]
+[editable path="Spawner/EnemyRound53"]
+[editable path="Spawner/EnemyRound54"]
+[editable path="Spawner/EnemyRound55"]
+[editable path="Spawner/EnemyRound56"]
+[editable path="Spawner/EnemyRound57"]
+[editable path="Spawner/EnemyRound58"]
+[editable path="Spawner/EnemyRound59"]
+[editable path="Spawner/EnemyRound60"]
+[editable path="Spawner/EnemyRound61"]
+[editable path="Spawner/EnemyRound62"]
+[editable path="Spawner/EnemyRound63"]
