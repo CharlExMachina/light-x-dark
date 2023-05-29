@@ -15,6 +15,8 @@ func _on_Area2D_area_entered(area: Area2D) -> void:
 		$Area2D.set_deferred("monitoring", false)
 		$Area2D.set_deferred("monitorable", false)
 		$TimeToShoot.stop()
+		$ExplosionSound.play()
+		$ExplosionAnimation.show()
 		$ExplosionAnimation.play("default")
 
 
