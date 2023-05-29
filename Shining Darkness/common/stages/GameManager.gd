@@ -19,3 +19,5 @@ func _ready() -> void:
 
 func _on_Player_on_hp_changed(hp, max_hp) -> void:
 	_health_bar.value = (hp / max_hp) * 100.0
+	$Camera2D.add_trauma(0.4)
+	$CanvasLayer/ColorRect.damage()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=2]
+[gd_scene load_steps=87 format=2]
 
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://stage_1/sprites/parallax_space_backgound.png" type="Texture" id=2]
@@ -16,11 +16,14 @@
 [ext_resource path="res://enemies/booster/BoosterEnemyLight.tscn" type="PackedScene" id=14]
 [ext_resource path="res://stage_1/sprites/parallax_space_far_planets.png" type="Texture" id=15]
 [ext_resource path="res://stage_1/sprites/bg-stars.png" type="Texture" id=16]
+[ext_resource path="res://Dream about space.mp3" type="AudioStream" id=17]
+[ext_resource path="res://stage_1/Camera.gd" type="Script" id=18]
+[ext_resource path="res://stage_1/DamageRect.gd" type="Script" id=19]
 
 [sub_resource type="Shader" id=69]
 code = "shader_type canvas_item;
 
-uniform vec2 motion = vec2(0.0, -100);
+uniform vec2 motion = vec2(0.0, -150);
 uniform float scale = 1.0;
 uniform vec2 offset = vec2(0.0);
 
@@ -30,11 +33,11 @@ void vertex(){
 
 [sub_resource type="ShaderMaterial" id=70]
 shader = SubResource( 69 )
-shader_param/motion = Vector2( 0, -30 )
+shader_param/motion = Vector2( 0, -20 )
 shader_param/scale = 1.0
 shader_param/offset = Vector2( 0, 0 )
 
-[sub_resource type="Shader" id=71]
+[sub_resource type="Shader" id=74]
 code = "shader_type canvas_item;
 
 uniform vec2 motion = vec2(0.0, -100);
@@ -46,9 +49,9 @@ void vertex(){
 }"
 
 [sub_resource type="ShaderMaterial" id=72]
-shader = SubResource( 71 )
-shader_param/motion = Vector2( 0, -58 )
-shader_param/scale = 1.916
+shader = SubResource( 74 )
+shader_param/motion = Vector2( 0, -80 )
+shader_param/scale = 1.856
 shader_param/offset = Vector2( 0, 0 )
 
 [sub_resource type="Curve2D" id=1]
@@ -133,7 +136,7 @@ _data = {
 
 [sub_resource type="Curve2D" id=15]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -166, 331, 0, 0, 0, 0, 153, 336, 0, 0, 0, 0, 250, 231, 0, 0, 0, 0, 332, 182, 0, 0, 0, 0, 513, 123, 0, 0, 0, 0, 656, 131, 0, 0, 0, 0, 752, 265, 0, 0, 0, 0, 842, 320, 0, 0, 0, 0, 998, 139, 0, 0, 0, 0, 1100, 61, 0, 0, 0, 0, 1227, 58, 0, 0, 0, 0, 1514, 41 )
+"points": PoolVector2Array( 0, 0, 0, 0, -224, 341, 0, 0, 0, 0, 153, 336, 0, 0, 0, 0, 250, 231, 0, 0, 0, 0, 332, 182, 0, 0, 0, 0, 513, 123, 0, 0, 0, 0, 656, 131, 0, 0, 0, 0, 752, 265, 0, 0, 0, 0, 842, 320, 0, 0, 0, 0, 998, 139, 0, 0, 0, 0, 1100, 61, 0, 0, 0, 0, 1227, 58, 0, 0, 0, 0, 1550, 47 )
 }
 
 [sub_resource type="Curve2D" id=16]
@@ -193,7 +196,7 @@ _data = {
 
 [sub_resource type="Curve2D" id=30]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -73, 54, 0, 0, 0, 0, 58, 236, 0, 0, 0, 0, 1478, 238 )
+"points": PoolVector2Array( 0, 0, 0, 0, -251, 158, 0, 0, 0, 0, 58, 236, 0, 0, 0, 0, 1531, 239 )
 }
 
 [sub_resource type="Curve2D" id=31]
@@ -243,7 +246,7 @@ _data = {
 
 [sub_resource type="Curve2D" id=40]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 1016, -45, 0, 0, 0, 0, 886, 218, 0, 0, 0, 0, 781, 76, 0, 0, 0, 0, 584, 226, 0, 0, 0, 0, 472, 67, 0, 0, 0, 0, 232, 271, 0, 0, 0, 0, 197, 119, 0, 0, 0, 0, 84, 220, 0, 0, 0, 0, -98, 121 )
+"points": PoolVector2Array( 0, 0, 0, 0, 1137, -211, 0, 0, 0, 0, 924, 154, 0, 0, 0, 0, 781, 76, 0, 0, 0, 0, 584, 226, 0, 0, 0, 0, 472, 67, 0, 0, 0, 0, 232, 271, 0, 0, 0, 0, 197, 119, 0, 0, 0, 0, 84, 220, 0, 0, 0, 0, -245, 72 )
 }
 
 [sub_resource type="Curve2D" id=41]
@@ -303,7 +306,7 @@ _data = {
 
 [sub_resource type="Curve2D" id=52]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 778, -62, 0, 0, 0, 0, 778, 787 )
+"points": PoolVector2Array( 0, 0, 0, 0, 776, -108, 0, 0, 0, 0, 777, 770 )
 }
 
 [sub_resource type="Curve2D" id=53]
@@ -369,17 +372,23 @@ _data = {
 [node name="Stage1" type="Node"]
 script = ExtResource( 9 )
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 640, 360 )
+current = true
+script = ExtResource( 18 )
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -100
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = -159.0
+margin_top = -134.0
+margin_right = 186.0
+margin_bottom = 87.0
 texture = ExtResource( 2 )
 expand = true
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Stars2" type="TextureRect" parent="CanvasLayer"]
 material = SubResource( 70 )
@@ -467,6 +476,12 @@ texture = ExtResource( 15 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.6, 0.133333, 0.133333, 0 )
+script = ExtResource( 19 )
 
 [node name="UILayer" type="CanvasLayer" parent="."]
 
@@ -966,6 +981,10 @@ position = Vector2( 637, 659 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 4 )
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 17 )
+autoplay = true
 
 [connection signal="on_hp_changed" from="Player" to="." method="_on_Player_on_hp_changed"]
 

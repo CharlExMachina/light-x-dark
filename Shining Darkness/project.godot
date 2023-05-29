@@ -20,8 +20,8 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Shining Darkness"
-run/main_scene="res://stage_1/Stage1.tscn"
+config/name="LIGHT X DARK"
+run/main_scene="res://MainMenu.tscn"
 config/icon="res://icon.png"
 
 [display]
