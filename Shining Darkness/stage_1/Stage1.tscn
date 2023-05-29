@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=2]
+[gd_scene load_steps=84 format=2]
 
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://stage_1/sprites/parallax_space_backgound.png" type="Texture" id=2]
@@ -273,7 +273,7 @@ _data = {
 
 [sub_resource type="Curve2D" id=46]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 677, -55, 0, 0, 0, 0, 680, 79 )
+"points": PoolVector2Array( 0, 0, 0, 0, 790, -67, 0, 0, 0, 0, 760, 32 )
 }
 
 [sub_resource type="Curve2D" id=47]
@@ -288,7 +288,7 @@ _data = {
 
 [sub_resource type="Curve2D" id=49]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -84, 337, 0, 0, 0, 0, 147, 330 )
+"points": PoolVector2Array( 0, 0, 0, 0, -84, 337, 0, 0, 0, 0, 114, 336 )
 }
 
 [sub_resource type="Curve2D" id=50]
@@ -318,7 +318,7 @@ _data = {
 
 [sub_resource type="Curve2D" id=55]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 976, -45, 0, 0, 0, 0, 914, 47 )
+"points": PoolVector2Array( 0, 0, 0, 0, 976, -45, 0, 0, 0, 0, 975, 69 )
 }
 
 [sub_resource type="Curve2D" id=56]
@@ -361,6 +361,11 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 397.667, -81.0322, 0, 0, 0, 0, 387.114, 749.3 )
 }
 
+[sub_resource type="Curve2D" id=73]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 1185, -77, 0, 0, 0, 0, 1080, 381, 0, 0, 0, 0, 826, 458, 0, 0, 0, 0, 463, -97 )
+}
+
 [node name="Stage1" type="Node"]
 script = ExtResource( 9 )
 
@@ -387,6 +392,9 @@ expand = true
 stretch_mode = 2
 flip_h = true
 flip_v = true
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Stars5" type="TextureRect" parent="CanvasLayer"]
 material = SubResource( 70 )
@@ -399,6 +407,9 @@ expand = true
 stretch_mode = 2
 flip_h = true
 flip_v = true
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Stars3" type="TextureRect" parent="CanvasLayer"]
 self_modulate = Color( 2.5, 1, 2.5, 1 )
@@ -412,6 +423,9 @@ expand = true
 stretch_mode = 2
 flip_h = true
 flip_v = true
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Stars4" type="TextureRect" parent="CanvasLayer"]
 self_modulate = Color( 2.6, 2.6, 1, 1 )
@@ -425,6 +439,9 @@ expand = true
 stretch_mode = 2
 flip_h = true
 flip_v = true
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Planet" type="TextureRect" parent="CanvasLayer"]
 anchor_right = 1.0
@@ -437,6 +454,9 @@ rect_scale = Vector2( 0.584689, 0.584689 )
 texture = ExtResource( 3 )
 expand = true
 stretch_mode = 5
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Moons" type="TextureRect" parent="CanvasLayer"]
 margin_left = 974.0
@@ -444,6 +464,9 @@ margin_top = 107.0
 margin_right = 1246.0
 margin_bottom = 267.0
 texture = ExtResource( 15 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="UILayer" type="CanvasLayer" parent="."]
 
@@ -807,6 +830,7 @@ curve = SubResource( 45 )
 enemy_units_to_spawn = [ ExtResource( 5 ) ]
 
 [node name="Path2D" parent="Spawner/EnemyRound46" index="0"]
+self_modulate = Color( 0.0666667, 0.886275, 0.635294, 0.701961 )
 curve = SubResource( 46 )
 
 [node name="EnemyRound47" parent="Spawner" instance=ExtResource( 6 )]
@@ -825,6 +849,8 @@ curve = SubResource( 48 )
 enemy_units_to_spawn = [ ExtResource( 5 ) ]
 
 [node name="Path2D" parent="Spawner/EnemyRound49" index="0"]
+self_modulate = Color( 0.556863, 0.0470588, 0.431373, 0.701961 )
+scale = Vector2( 1, 0.996545 )
 curve = SubResource( 49 )
 
 [node name="EnemyRound50" parent="Spawner" instance=ExtResource( 6 )]
@@ -864,6 +890,7 @@ curve = SubResource( 54 )
 enemy_units_to_spawn = [ ExtResource( 7 ) ]
 
 [node name="Path2D" parent="Spawner/EnemyRound55" index="0"]
+self_modulate = Color( 0.737255, 0.854902, 0.054902, 0.701961 )
 curve = SubResource( 55 )
 
 [node name="EnemyRound56" parent="Spawner" instance=ExtResource( 6 )]
@@ -922,6 +949,13 @@ self_modulate = Color( 0.964706, 0.0784314, 0.952941, 0.701961 )
 position = Vector2( 475.948, 1.82984 )
 scale = Vector2( 0.284289, 1.03453 )
 curve = SubResource( 63 )
+
+[node name="EnemyRound64" parent="Spawner" instance=ExtResource( 6 )]
+spawn_delay_in_seconds = 3.0
+enemy_units_to_spawn = [ ExtResource( 8 ), ExtResource( 12 ), ExtResource( 8 ), ExtResource( 12 ) ]
+
+[node name="Path2D" parent="Spawner/EnemyRound64" index="0"]
+curve = SubResource( 73 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 637, 659 )
@@ -994,3 +1028,4 @@ environment = ExtResource( 4 )
 [editable path="Spawner/EnemyRound61"]
 [editable path="Spawner/EnemyRound62"]
 [editable path="Spawner/EnemyRound63"]
+[editable path="Spawner/EnemyRound64"]
