@@ -49,6 +49,7 @@ func _on_Area2D_area_entered(area: Area2D) -> void:
 	health_points -= damage
 
 	if (health_points <= 0):
+		ScoreManager.add_score(500)
 		_should_follow_path = false
 		$AnimatedSprite.hide()
 		$Area2D.set_deferred("monitoring", false)

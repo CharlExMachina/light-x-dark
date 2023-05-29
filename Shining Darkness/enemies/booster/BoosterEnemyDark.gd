@@ -21,6 +21,7 @@ func _process(delta: float) -> void:
 
 
 func _die() -> void:
+	ScoreManager.add_score(800)
 	_is_dead = true
 	$Trail.emitting = false
 	$SmallParticles.emitting = false

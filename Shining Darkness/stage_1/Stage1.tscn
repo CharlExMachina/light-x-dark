@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=2]
+[gd_scene load_steps=97 format=2]
 
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://stage_1/sprites/parallax_space_backgound.png" type="Texture" id=2]
@@ -21,6 +21,15 @@
 [ext_resource path="res://stage_1/DamageRect.gd" type="Script" id=19]
 [ext_resource path="res://player_damage.wav" type="AudioStream" id=20]
 [ext_resource path="res://common/fonts/BebasNeue-Regular.ttf" type="DynamicFontData" id=21]
+[ext_resource path="res://player/beams/LightBeam.tscn" type="PackedScene" id=22]
+[ext_resource path="res://player/beams/DarkBeam.tscn" type="PackedScene" id=23]
+[ext_resource path="res://enemies/basic/beams/EnemyLightBeam.tscn" type="PackedScene" id=24]
+[ext_resource path="res://enemies/basic/beams/EnemyDarkBeam.tscn" type="PackedScene" id=25]
+
+[sub_resource type="Curve2D" id=78]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 2146, -806, 0, 0, 0, 0, 2266, -521 )
+}
 
 [sub_resource type="Shader" id=69]
 code = "shader_type canvas_item;
@@ -55,6 +64,16 @@ shader = SubResource( 74 )
 shader_param/motion = Vector2( 0, -80 )
 shader_param/scale = 1.856
 shader_param/offset = Vector2( 0, 0 )
+
+[sub_resource type="DynamicFont" id=77]
+size = 130
+outline_size = 4
+outline_color = Color( 0.207843, 0.0196078, 0.223529, 1 )
+font_data = ExtResource( 21 )
+
+[sub_resource type="DynamicFont" id=76]
+size = 32
+font_data = ExtResource( 21 )
 
 [sub_resource type="DynamicFont" id=75]
 size = 130
@@ -385,6 +404,50 @@ position = Vector2( 640, 360 )
 current = true
 script = ExtResource( 18 )
 
+[node name="EnemyDarkBeam" parent="Camera2D" instance=ExtResource( 25 )]
+position = Vector2( 1932, -447 )
+
+[node name="ShootSound" parent="Camera2D/EnemyDarkBeam" index="4"]
+volume_db = -80.0
+
+[node name="EnemyLightBeam" parent="Camera2D" instance=ExtResource( 24 )]
+position = Vector2( 2029, -473 )
+
+[node name="ShootSound" parent="Camera2D/EnemyLightBeam" index="4"]
+volume_db = -80.0
+
+[node name="DarkBeam" parent="Camera2D" instance=ExtResource( 23 )]
+position = Vector2( 2046, -551 )
+
+[node name="ShootSound" parent="Camera2D/DarkBeam" index="4"]
+volume_db = -80.0
+
+[node name="LightBeam" parent="Camera2D" instance=ExtResource( 22 )]
+position = Vector2( 1925, -561 )
+
+[node name="ShootSound" parent="Camera2D/LightBeam" index="5"]
+volume_db = -80.0
+
+[node name="Path2D" type="Path2D" parent="Camera2D"]
+curve = SubResource( 78 )
+
+[node name="BoosterEnemyDark" parent="Camera2D/Path2D" instance=ExtResource( 13 )]
+position = Vector2( 2146, -806 )
+rotation = 1.17226
+
+[node name="AudioStreamPlayer" parent="Camera2D/Path2D/BoosterEnemyDark" index="7"]
+volume_db = -80.0
+
+[node name="BoosterEnemyLight" parent="Camera2D/Path2D" instance=ExtResource( 14 )]
+position = Vector2( 2146, -806 )
+rotation = 1.17226
+
+[node name="AnimatedSprite" parent="Camera2D/Path2D/BoosterEnemyLight" index="2"]
+frame = 0
+
+[node name="AudioStreamPlayer" parent="Camera2D/Path2D/BoosterEnemyLight" index="7"]
+volume_db = -80.0
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -100
 
@@ -528,10 +591,34 @@ margin_left = -267.0
 margin_top = -273.0
 margin_right = 267.0
 margin_bottom = 273.0
-custom_fonts/font = SubResource( 75 )
+custom_fonts/font = SubResource( 77 )
 text = "GAME 
 X 
 OVER"
+align = 1
+
+[node name="Score" type="Label" parent="UILayer"]
+margin_left = 28.0
+margin_top = 70.0
+margin_right = 380.0
+margin_bottom = 109.0
+custom_fonts/font = SubResource( 76 )
+text = "SCORE: 0"
+
+[node name="VictoryLabel" type="Label" parent="UILayer"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -267.0
+margin_top = -273.0
+margin_right = 267.0
+margin_bottom = 273.0
+custom_fonts/font = SubResource( 75 )
+text = "STAGE
+X
+COMPLETE"
 align = 1
 
 [node name="Spawner" type="Node" parent="."]
@@ -1017,6 +1104,12 @@ volume_db = -3.368
 [connection signal="on_destroyed" from="Player" to="." method="_on_Player_on_destroyed"]
 [connection signal="on_hp_changed" from="Player" to="." method="_on_Player_on_hp_changed"]
 
+[editable path="Camera2D/EnemyDarkBeam"]
+[editable path="Camera2D/EnemyLightBeam"]
+[editable path="Camera2D/DarkBeam"]
+[editable path="Camera2D/LightBeam"]
+[editable path="Camera2D/Path2D/BoosterEnemyDark"]
+[editable path="Camera2D/Path2D/BoosterEnemyLight"]
 [editable path="Spawner/EnemyRound"]
 [editable path="Spawner/EnemyRound2"]
 [editable path="Spawner/EnemyRound3"]
