@@ -73,7 +73,7 @@ _data = {
 
 [sub_resource type="Curve2D" id=4]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -37, -72, 0, 0, 0, 0, 135, 142 )
+"points": PoolVector2Array( 0, 0, 0, 0, 206, -70, 0, 0, 0, 0, 236, 207 )
 }
 
 [sub_resource type="Curve2D" id=5]
@@ -198,7 +198,7 @@ _data = {
 
 [sub_resource type="Curve2D" id=31]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 265, -58, 0, 0, 0, 0, 264, 122 )
+"points": PoolVector2Array( 0, 0, 0, 0, 265, -58, 0, 0, 0, 0, 347, 106 )
 }
 
 [sub_resource type="Curve2D" id=32]
@@ -243,12 +243,12 @@ _data = {
 
 [sub_resource type="Curve2D" id=40]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 1016, -45, 0, 0, 0, 0, 689, 154, 0, 0, 0, 0, -98, 121 )
+"points": PoolVector2Array( 0, 0, 0, 0, 1016, -45, 0, 0, 0, 0, 886, 218, 0, 0, 0, 0, 781, 76, 0, 0, 0, 0, 584, 226, 0, 0, 0, 0, 472, 67, 0, 0, 0, 0, 232, 271, 0, 0, 0, 0, 197, 119, 0, 0, 0, 0, 84, 220, 0, 0, 0, 0, -98, 121 )
 }
 
 [sub_resource type="Curve2D" id=41]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 48, -81, 0, 0, 0, 0, 55, 131, 0, 0, 0, 0, 744, 178, 0, 0, 0, 0, 1432, 181 )
+"points": PoolVector2Array( 0, 0, 0, 0, 478, -33, 0, 0, 0, 0, 293, 123, 0, 0, 0, 0, 321, 241, 0, 0, 0, 0, 417, 188, 0, 0, 0, 0, 444, 286, 0, 0, 0, 0, 583, 222, 0, 0, 0, 0, 652, 233, 0, 0, 0, 0, 744, 178, 0, 0, 0, 0, 1432, 181 )
 }
 
 [sub_resource type="Curve2D" id=42]
@@ -273,7 +273,7 @@ _data = {
 
 [sub_resource type="Curve2D" id=46]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 790, -67, 0, 0, 0, 0, 760, 32 )
+"points": PoolVector2Array( 0, 0, 0, 0, 974, -32, 0, 0, 0, 0, 956, 43 )
 }
 
 [sub_resource type="Curve2D" id=47]
@@ -288,12 +288,12 @@ _data = {
 
 [sub_resource type="Curve2D" id=49]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -84, 337, 0, 0, 0, 0, 114, 336 )
+"points": PoolVector2Array( 0, 0, 0, 0, 614, -49.1699, 0, 0, 0, 0, 612, 115.399 )
 }
 
 [sub_resource type="Curve2D" id=50]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 1278, -105, 0, 0, 0, 0, 1255, 26, 0, 0, 0, 0, 1242, 191, 0, 0, 0, 0, 1171, 208, 0, 0, 0, 0, 1009, 278, 0, 0, 0, 0, 818, 347, 0, 0, 0, 0, 594, 331, 0, 0, 0, 0, 431, 279, 0, 0, 0, 0, 218, 277, 0, 0, 0, 0, 38, 301, 0, 0, 0, 0, -55, 269, 0, 0, 0, 0, -51, 50, 0, 0, 0, 0, 96, 100, 0, 0, 0, 0, 325, 124, 0, 0, 0, 0, 539, 120, 0, 0, 0, 0, 769, -53 )
+"points": PoolVector2Array( 0, 0, 0, 0, 881, -115, 0, 0, 0, 0, 742, 72, 0, 0, 0, 0, 919, 82, 0, 0, 0, 0, 768, 200, 0, 0, 0, 0, 1009, 278, 0, 0, 0, 0, 818, 347, 0, 0, 0, 0, 594, 331, 0, 0, 0, 0, 431, 279, 0, 0, 0, 0, 218, 277, 0, 0, 0, 0, 38, 301, 0, 0, 0, 0, -55, 269, 0, 0, 0, 0, -51, 50, 0, 0, 0, 0, 96, 100, 0, 0, 0, 0, 325, 124, 0, 0, 0, 0, 539, 120, 0, 0, 0, 0, 769, -53 )
 }
 
 [sub_resource type="Curve2D" id=51]
@@ -788,6 +788,7 @@ time_between_spawns = 2.0
 enemy_units_to_spawn = [ ExtResource( 12 ), ExtResource( 8 ), ExtResource( 12 ) ]
 
 [node name="Path2D" parent="Spawner/EnemyRound40" index="0"]
+self_modulate = Color( 1, 0.188235, 0, 0.701961 )
 curve = SubResource( 41 )
 
 [node name="EnemyRound41" parent="Spawner" instance=ExtResource( 6 )]
@@ -811,6 +812,7 @@ self_modulate = Color( 0.0745098, 0.835294, 0.913725, 0.701961 )
 curve = SubResource( 43 )
 
 [node name="EnemyRound43" parent="Spawner" instance=ExtResource( 6 )]
+spawn_delay_in_seconds = 2.0
 time_between_spawns = 2.0
 enemy_units_to_spawn = [ ExtResource( 12 ), ExtResource( 12 ), ExtResource( 12 ) ]
 
@@ -840,6 +842,7 @@ enemy_units_to_spawn = [ ExtResource( 5 ) ]
 curve = SubResource( 47 )
 
 [node name="EnemyRound48" parent="Spawner" instance=ExtResource( 6 )]
+spawn_delay_in_seconds = 1.0
 enemy_units_to_spawn = [ ExtResource( 5 ) ]
 
 [node name="Path2D" parent="Spawner/EnemyRound48" index="0"]
@@ -952,6 +955,7 @@ curve = SubResource( 63 )
 
 [node name="EnemyRound64" parent="Spawner" instance=ExtResource( 6 )]
 spawn_delay_in_seconds = 3.0
+time_between_spawns = 1.0
 enemy_units_to_spawn = [ ExtResource( 8 ), ExtResource( 12 ), ExtResource( 8 ), ExtResource( 12 ) ]
 
 [node name="Path2D" parent="Spawner/EnemyRound64" index="0"]

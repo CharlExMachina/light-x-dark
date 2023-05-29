@@ -56,7 +56,7 @@ extents = Vector2( 32, 26.75 )
 [node name="TrigunEnemyLight" instance=ExtResource( 1 )]
 rotate = true
 script = ExtResource( 3 )
-health_points = 16
+health_points = 10
 movement_speed = 50.0
 beam_scene = ExtResource( 4 )
 
@@ -65,12 +65,10 @@ position = Vector2( 0, 2 )
 rotation = -1.5708
 scale = Vector2( 2.8, 2.8 )
 frames = SubResource( 3 )
-frame = 1
 playing = true
 offset = Vector2( 0, -5.71429 )
 
 [node name="ExplosionAnimation" parent="." index="1"]
-scale = Vector2( 5, 5 )
 frames = SubResource( 12 )
 
 [node name="Area2D" parent="." index="2"]

@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://enemies/booster/BoosterEnemyLight.tscn" type="PackedScene" id=2]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 77, -68, 0, 0, 0, 0, 1240, 801 )
+}
+
+[node name="TestRoom" type="Node"]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 561, 649 )
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource( 1 )
+
+[node name="BoosterEnemyLight" parent="Path2D" instance=ExtResource( 2 )]
+position = Vector2( 77, -68 )
+rotation = 0.641704
+movement_speed = 200.0

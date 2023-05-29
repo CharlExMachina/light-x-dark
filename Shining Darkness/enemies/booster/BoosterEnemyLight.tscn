@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://enemies/booster/sprites/light/enemy4.png" type="Texture" id=1]
 [ext_resource path="res://enemies/booster/sprites/light/enemy1.png" type="Texture" id=2]
@@ -12,13 +12,7 @@
 [ext_resource path="res://player/beams/sprites/trace_02.png" type="Texture" id=10]
 [ext_resource path="res://player/beams/sprites/flare_01.png" type="Texture" id=11]
 [ext_resource path="res://enemies/booster/BoosterEnemy.gd" type="Script" id=12]
-[ext_resource path="res://enemies/common/sprites/explosion_2/hits_5_5.png" type="Texture" id=13]
-[ext_resource path="res://enemies/common/sprites/explosion_2/hits_5_6.png" type="Texture" id=14]
-[ext_resource path="res://enemies/common/sprites/explosion_2/hits_5_7.png" type="Texture" id=15]
-[ext_resource path="res://enemies/common/sprites/explosion_2/hits_5_3.png" type="Texture" id=16]
-[ext_resource path="res://enemies/common/sprites/explosion_2/hits_5_1.png" type="Texture" id=17]
-[ext_resource path="res://enemies/common/sprites/explosion_2/hits_5_2.png" type="Texture" id=18]
-[ext_resource path="res://enemies/common/sprites/explosion_2/hits_5_4.png" type="Texture" id=19]
+[ext_resource path="res://enemies/common/sprites/explosion_3/explosion.png" type="Texture" id=13]
 [ext_resource path="res://enemies/booster/sounds/booster_ship.wav" type="AudioStream" id=20]
 [ext_resource path="res://enemies/booster/BoosterEnemyCollider.gd" type="Script" id=21]
 
@@ -78,12 +72,32 @@ animations = [ {
 "speed": 18.0
 } ]
 
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 13 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 13 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 13 )
+region = Rect2( 32, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 13 )
+region = Rect2( 48, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 13 )
+region = Rect2( 64, 0, 16, 16 )
+
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
-"frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 16 ), ExtResource( 19 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ],
+"frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
 "loop": true,
 "name": "default",
-"speed": 18.0
+"speed": 15.0
 } ]
 
 [node name="BoosterEnemyLight" instance=ExtResource( 5 )]
@@ -117,11 +131,11 @@ texture = ExtResource( 11 )
 rotation = 3.14159
 scale = Vector2( 2.3, 2.3 )
 frames = SubResource( 1 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="ExplosionAnimation" parent="." index="3"]
-scale = Vector2( 4, 4 )
+z_index = 0
 frames = SubResource( 7 )
 
 [node name="Area2D" parent="." index="4"]

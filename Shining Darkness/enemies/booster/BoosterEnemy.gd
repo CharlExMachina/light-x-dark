@@ -3,27 +3,30 @@ extends PathFollow2D
 export(int) var health_points = 10
 export(float) var movement_speed = 50.0
 
-var _use_reverse_offset: bool = false
+var _is_dead := false
 
 
 func _process(delta: float) -> void:
-#	if _should_follow_path:
-	offset += -movement_speed if _use_reverse_offset else movement_speed * delta
+	if _is_dead:
+		return
+
+	offset += movement_speed * delta
 	if unit_offset >= 1.0:
-#			_should_follow_path = false
 		$Trail.emitting = false
 		$SmallParticles.emitting = false
 
 
 func _die() -> void:
+	_is_dead = true
+	$Trail.emitting = false
+	$SmallParticles.emitting = false
 	$AnimatedSprite.hide()
-
+	$ExplosionSound.play()
+	$ExplosionAnimation.show()
+	$ExplosionAnimation.play("default")
 	$Area2D.set_deferred("monitoring", false)
 	$Area2D.set_deferred("monitorable", false)
-	$ExplosionAnimation.play("default")
 
-	# a hack used to preserve the natural movement of the trail particles, that way these won't stop unnaturally
-	_use_reverse_offset
 
 func _on_TimeToDisappear_timeout() -> void:
 	queue_free()
