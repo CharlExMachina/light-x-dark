@@ -1,4 +1,4 @@
-# shining-darkness
+# LIGHT X DARK
 Submission for the GameDev.tv Jam 2023
 
 
