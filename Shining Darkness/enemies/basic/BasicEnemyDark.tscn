@@ -55,14 +55,13 @@ extents = Vector2( 43.5, 16.5 )
 
 [node name="BasicEnemyDark" instance=ExtResource( 1 )]
 script = ExtResource( 10 )
-health_points = 5
+health_points = 3
 movement_speed = 170.0
 beam_scene = ExtResource( 11 )
 
 [node name="AnimatedSprite" parent="." index="0"]
 scale = Vector2( 3.2, 3.2 )
 frames = SubResource( 8 )
-frame = 1
 playing = true
 
 [node name="ExplosionAnimation" parent="." index="1"]
