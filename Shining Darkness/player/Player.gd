@@ -27,6 +27,7 @@ var _can_shoot_light_beam: bool = true
 var _can_shoot_dark_beam: bool = true
 var _attack_mode = AttackMode.LIGHT_MODE
 var _max_hp = hp
+var _is_dead := false
 
 var x_acc = 0.0
 var y_acc = 0.0
@@ -41,10 +42,16 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
+	if _is_dead:
+		return
+
 	_movement = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 
 
 func _physics_process(delta: float) -> void:
+	if _is_dead:
+		return
+
 	_handle_movement()
 	_handle_mode_switch()
 
@@ -80,6 +87,9 @@ func _set_dark_mode_hitbox() -> void:
 
 
 func _shoot_beam() -> void:
+	if _is_dead:
+		return
+
 	if _can_shoot_light_beam and _attack_mode == AttackMode.LIGHT_MODE:
 		_can_shoot_light_beam = false
 		var beam_instance = _light_beam_scene.instance()
@@ -129,3 +139,9 @@ func _on_Hitbox_area_entered(area: Area2D) -> void:
 	var damage = area.damage_value
 	hp -= damage
 	emit_signal("on_hp_changed", hp, _max_hp)
+
+	if hp <= 0:
+		$PlayerShipSprite.hide()
+		$Explosion.play("default")
+		_is_dead = true
+		emit_signal("on_destroyed")

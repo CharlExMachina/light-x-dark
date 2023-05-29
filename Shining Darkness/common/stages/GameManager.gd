@@ -21,3 +21,12 @@ func _on_Player_on_hp_changed(hp, max_hp) -> void:
 	_health_bar.value = (hp / max_hp) * 100.0
 	$Camera2D.add_trauma(0.4)
 	$CanvasLayer/ColorRect.damage()
+	$PlayerDamageSound.play()
+
+
+func _on_Player_on_destroyed() -> void:
+	$Music.stop()
+	$UILayer/HPContainer.hide()
+	$UILayer/Label.show()
+	yield(get_tree().create_timer(3.0), "timeout")
+	get_tree().change_scene("res://MainMenu.tscn")
