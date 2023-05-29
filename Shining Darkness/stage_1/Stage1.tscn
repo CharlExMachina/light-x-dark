@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=53 format=2]
 
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://stage_1/sprites/parallax_space_backgound.png" type="Texture" id=2]
@@ -22,7 +22,7 @@ _data = {
 
 [sub_resource type="Curve2D" id=2]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 617, -82, 0, 0, 0, 0, 620, 179, 0, 0, 0, 0, -95, 180 )
+"points": PoolVector2Array( 0, 0, 0, 0, 617, -82, 0, 0, 0, 0, 620, 179, 0, 0, 0, 0, -153, 180 )
 }
 
 [sub_resource type="Curve2D" id=3]
@@ -32,7 +32,7 @@ _data = {
 
 [sub_resource type="Curve2D" id=7]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -101, 178, 0, 0, 0, 0, 1374, 178 )
+"points": PoolVector2Array( 0, 0, 0, 0, -101, 178, 0, 0, 0, 0, 1364, 491 )
 }
 
 [sub_resource type="Curve2D" id=4]
@@ -42,12 +42,12 @@ _data = {
 
 [sub_resource type="Curve2D" id=5]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 1343, -69, 0, 0, 0, 0, 1205, 112 )
+"points": PoolVector2Array( 0, 0, 0, 0, 1343, -69, 0, 0, 0, 0, 1212, 136 )
 }
 
 [sub_resource type="Curve2D" id=6]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 1375, 251, 0, 0, 0, 0, -100, 251 )
+"points": PoolVector2Array( 0, 0, 0, 0, 1386, 21, 0, 0, 0, 0, -43, 280 )
 }
 
 [sub_resource type="Curve2D" id=24]
@@ -72,7 +72,7 @@ _data = {
 
 [sub_resource type="Curve2D" id=25]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 287, -193, 0, 0, 0, 0, 294, 829 )
+"points": PoolVector2Array( 0, 0, 0, 0, 583, -185, 0, 0, 0, 0, 583, 801 )
 }
 
 [sub_resource type="Curve2D" id=11]
@@ -112,7 +112,7 @@ _data = {
 
 [sub_resource type="Curve2D" id=20]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 1344, -42, 0, 0, 0, 0, 1218, 49 )
+"points": PoolVector2Array( 0, 0, 0, 0, 1344, -42, 0, 0, 0, 0, 1169, 123 )
 }
 
 [sub_resource type="Curve2D" id=18]
@@ -122,7 +122,7 @@ _data = {
 
 [sub_resource type="Curve2D" id=21]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 151, -127, 0, 0, 0, 0, 150, 891 )
+"points": PoolVector2Array( 0, 0, 0, 0, 1262, -116, 0, 0, 0, 0, 437, 770 )
 }
 
 [sub_resource type="Curve2D" id=22]
@@ -133,6 +133,76 @@ _data = {
 [sub_resource type="Curve2D" id=23]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 1321, 519, 0, 0, 0, 0, 1019, 294, 0, 0, 0, 0, 579, 272, 0, 0, 0, 0, 358, 304, 0, 0, 0, 0, -218, 24 )
+}
+
+[sub_resource type="Curve2D" id=27]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 916, -88, 0, 0, 0, 0, 843, 81 )
+}
+
+[sub_resource type="Curve2D" id=26]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 1114, -64, 0, 0, 0, 0, 938, 76, 0, 0, 0, 0, 922, 310, 0, 0, 0, 0, 940, 495, 0, 0, 0, 0, 1360, 512 )
+}
+
+[sub_resource type="Curve2D" id=28]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 116, -120, 0, 0, 0, 0, 236, 156, 0, 0, 0, 0, 290, 335, 0, 0, 0, 0, 827, 368, 0, 0, 0, 0, 1319, 261 )
+}
+
+[sub_resource type="Curve2D" id=29]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 68, -82, 0, 0, 0, 0, 266, 94 )
+}
+
+[sub_resource type="Curve2D" id=30]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -73, 54, 0, 0, 0, 0, 58, 236, 0, 0, 0, 0, 1478, 238 )
+}
+
+[sub_resource type="Curve2D" id=31]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 265, -58, 0, 0, 0, 0, 264, 122 )
+}
+
+[sub_resource type="Curve2D" id=32]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 934, -45, 0, 0, 0, 0, 933, 102 )
+}
+
+[sub_resource type="Curve2D" id=33]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 626, -79, 0, 0, 0, 0, 625, 826 )
+}
+
+[sub_resource type="Curve2D" id=34]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -178, -61, 0, 0, 0, 0, 140, 126, 0, 0, 0, 0, 1667, 433 )
+}
+
+[sub_resource type="Curve2D" id=35]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 886, -173, 0, 0, 0, 0, 336, 815 )
+}
+
+[sub_resource type="Curve2D" id=36]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -34, -136, 0, 0, 0, 0, 970, 798 )
+}
+
+[sub_resource type="Curve2D" id=37]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 1495, -39, 0, 0, 0, 0, -91, 730 )
+}
+
+[sub_resource type="Curve2D" id=38]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -58, -36, 0, 0, 0, 0, 1303, 730 )
+}
+
+[sub_resource type="Curve2D" id=39]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 1336, -28, 0, 0, 0, 0, -69, 765 )
 }
 
 [node name="Stage1" type="Node"]
@@ -210,7 +280,7 @@ self_modulate = Color( 0.623529, 0.639216, 0.0823529, 0.701961 )
 curve = SubResource( 2 )
 
 [node name="EnemyRound3" parent="Spawner" instance=ExtResource( 6 )]
-spawn_delay_in_seconds = 5.0
+spawn_delay_in_seconds = 3.0
 time_between_spawns = 1.3
 enemy_units_to_spawn = [ ExtResource( 12 ), ExtResource( 12 ), ExtResource( 8 ), ExtResource( 8 ) ]
 
@@ -259,7 +329,7 @@ enemy_units_to_spawn = [ ExtResource( 12 ), ExtResource( 12 ), ExtResource( 12 )
 curve = SubResource( 24 )
 
 [node name="EnemyRound8" parent="Spawner" instance=ExtResource( 6 )]
-enemy_units_to_spawn = [ ExtResource( 13 ) ]
+enemy_units_to_spawn = [ ExtResource( 14 ) ]
 
 [node name="Path2D" parent="Spawner/EnemyRound8" index="0"]
 curve = SubResource( 8 )
@@ -282,7 +352,7 @@ curve = SubResource( 9 )
 
 [node name="EnemyRound24" parent="Spawner" instance=ExtResource( 6 )]
 spawn_delay_in_seconds = 2.0
-enemy_units_to_spawn = [ ExtResource( 13 ) ]
+enemy_units_to_spawn = [ ExtResource( 14 ) ]
 
 [node name="Path2D" parent="Spawner/EnemyRound24" index="0"]
 curve = SubResource( 25 )
@@ -358,6 +428,7 @@ spawn_delay_in_seconds = 2.0
 enemy_units_to_spawn = [ ExtResource( 13 ) ]
 
 [node name="Path2D" parent="Spawner/EnemyRound20" index="0"]
+self_modulate = Color( 0.670588, 0.513726, 0.878431, 0.701961 )
 curve = SubResource( 21 )
 
 [node name="EnemyRound21" parent="Spawner" instance=ExtResource( 6 )]
@@ -373,8 +444,106 @@ enemy_units_to_spawn = [ ExtResource( 8 ), ExtResource( 8 ), ExtResource( 8 ) ]
 [node name="Path2D" parent="Spawner/EnemyRound22" index="0"]
 curve = SubResource( 23 )
 
+[node name="EnemyRound25" parent="Spawner" instance=ExtResource( 6 )]
+enemy_units_to_spawn = [ ExtResource( 7 ) ]
+
+[node name="Path2D" parent="Spawner/EnemyRound25" index="0"]
+curve = SubResource( 27 )
+
+[node name="EnemyRound26" parent="Spawner" instance=ExtResource( 6 )]
+time_between_spawns = 1.2
+enemy_units_to_spawn = [ ExtResource( 12 ), ExtResource( 12 ), ExtResource( 12 ) ]
+
+[node name="Path2D" parent="Spawner/EnemyRound26" index="0"]
+curve = SubResource( 26 )
+
+[node name="EnemyRound27" parent="Spawner" instance=ExtResource( 6 )]
+time_between_spawns = 1.2
+enemy_units_to_spawn = [ ExtResource( 12 ), ExtResource( 12 ), ExtResource( 12 ) ]
+
+[node name="Path2D" parent="Spawner/EnemyRound27" index="0"]
+curve = SubResource( 28 )
+
+[node name="EnemyRound28" parent="Spawner" instance=ExtResource( 6 )]
+enemy_units_to_spawn = [ ExtResource( 7 ) ]
+
+[node name="Path2D" parent="Spawner/EnemyRound28" index="0"]
+curve = SubResource( 29 )
+
+[node name="EnemyRound29" parent="Spawner" instance=ExtResource( 6 )]
+spawn_delay_in_seconds = 2.0
+time_between_spawns = 1.0
+enemy_units_to_spawn = [ ExtResource( 12 ), ExtResource( 12 ), ExtResource( 12 ), ExtResource( 12 ), ExtResource( 12 ) ]
+
+[node name="Path2D" parent="Spawner/EnemyRound29" index="0"]
+curve = SubResource( 30 )
+
+[node name="EnemyRound30" parent="Spawner" instance=ExtResource( 6 )]
+spawn_delay_in_seconds = 0.3
+enemy_units_to_spawn = [ ExtResource( 5 ) ]
+
+[node name="Path2D" parent="Spawner/EnemyRound30" index="0"]
+self_modulate = Color( 0.933333, 0.854902, 0, 0.701961 )
+curve = SubResource( 31 )
+
+[node name="EnemyRound31" parent="Spawner" instance=ExtResource( 6 )]
+enemy_units_to_spawn = [ ExtResource( 5 ) ]
+
+[node name="Path2D" parent="Spawner/EnemyRound31" index="0"]
+self_modulate = Color( 0.992157, 1, 0, 0.701961 )
+curve = SubResource( 32 )
+
+[node name="EnemyRound32" parent="Spawner" instance=ExtResource( 6 )]
+spawn_delay_in_seconds = 3.0
+enemy_units_to_spawn = [ ExtResource( 13 ) ]
+
+[node name="Path2D" parent="Spawner/EnemyRound32" index="0"]
+curve = SubResource( 33 )
+
+[node name="EnemyRound33" parent="Spawner" instance=ExtResource( 6 )]
+spawn_delay_in_seconds = 1.0
+time_between_spawns = 0.8
+enemy_units_to_spawn = [ ExtResource( 8 ), ExtResource( 8 ), ExtResource( 8 ), ExtResource( 12 ), ExtResource( 12 ), ExtResource( 12 ) ]
+
+[node name="Path2D" parent="Spawner/EnemyRound33" index="0"]
+curve = SubResource( 34 )
+
+[node name="EnemyRound34" parent="Spawner" instance=ExtResource( 6 )]
+spawn_delay_in_seconds = 1.0
+enemy_units_to_spawn = [ ExtResource( 14 ) ]
+
+[node name="Path2D" parent="Spawner/EnemyRound34" index="0"]
+curve = SubResource( 35 )
+
+[node name="EnemyRound35" parent="Spawner" instance=ExtResource( 6 )]
+spawn_delay_in_seconds = 1.0
+enemy_units_to_spawn = [ ExtResource( 13 ) ]
+
+[node name="Path2D" parent="Spawner/EnemyRound35" index="0"]
+curve = SubResource( 36 )
+
+[node name="EnemyRound36" parent="Spawner" instance=ExtResource( 6 )]
+spawn_delay_in_seconds = 1.0
+enemy_units_to_spawn = [ ExtResource( 14 ) ]
+
+[node name="Path2D" parent="Spawner/EnemyRound36" index="0"]
+curve = SubResource( 37 )
+
+[node name="EnemyRound37" parent="Spawner" instance=ExtResource( 6 )]
+spawn_delay_in_seconds = 3.0
+enemy_units_to_spawn = [ ExtResource( 13 ) ]
+
+[node name="Path2D" parent="Spawner/EnemyRound37" index="0"]
+curve = SubResource( 38 )
+
+[node name="EnemyRound38" parent="Spawner" instance=ExtResource( 6 )]
+enemy_units_to_spawn = [ ExtResource( 14 ) ]
+
+[node name="Path2D" parent="Spawner/EnemyRound38" index="0"]
+curve = SubResource( 39 )
+
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 228, 514 )
+position = Vector2( 637, 659 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 4 )
@@ -405,3 +574,17 @@ environment = ExtResource( 4 )
 [editable path="Spawner/EnemyRound20"]
 [editable path="Spawner/EnemyRound21"]
 [editable path="Spawner/EnemyRound22"]
+[editable path="Spawner/EnemyRound25"]
+[editable path="Spawner/EnemyRound26"]
+[editable path="Spawner/EnemyRound27"]
+[editable path="Spawner/EnemyRound28"]
+[editable path="Spawner/EnemyRound29"]
+[editable path="Spawner/EnemyRound30"]
+[editable path="Spawner/EnemyRound31"]
+[editable path="Spawner/EnemyRound32"]
+[editable path="Spawner/EnemyRound33"]
+[editable path="Spawner/EnemyRound34"]
+[editable path="Spawner/EnemyRound35"]
+[editable path="Spawner/EnemyRound36"]
+[editable path="Spawner/EnemyRound37"]
+[editable path="Spawner/EnemyRound38"]
