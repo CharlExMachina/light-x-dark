@@ -41,7 +41,8 @@ extents = Vector2( 42, 17 )
 
 [node name="BasicEnemyLight" instance=ExtResource( 1 )]
 script = ExtResource( 10 )
-health_points = 12
+health_points = 10
+movement_speed = 170.0
 beam_scene = ExtResource( 11 )
 
 [node name="AnimatedSprite" parent="." index="0"]
@@ -63,7 +64,7 @@ position = Vector2( 0, 5 )
 shape = SubResource( 6 )
 
 [node name="TimeToShoot" parent="." index="3"]
-wait_time = 1.2
+wait_time = 1.1
 autostart = true
 
 [connection signal="animation_finished" from="ExplosionAnimation" to="." method="_on_ExplosionAnimation_animation_finished"]

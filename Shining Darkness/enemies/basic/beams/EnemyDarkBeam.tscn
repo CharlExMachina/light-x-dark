@@ -7,15 +7,18 @@
 
 [node name="EnemyDarkBeam" instance=ExtResource( 1 )]
 collision_layer = 32
-damage_value = 5
-movement_speed = -300.0
+damage_value = 10
+movement_speed = -500.0
 
 [node name="Sprite" parent="." index="1"]
-position = Vector2( 1, -1 )
+position = Vector2( 2, -4 )
 rotation = 3.14159
-scale = Vector2( 3, 3 )
+scale = Vector2( 4, 4 )
 texture = ExtResource( 2 )
 hframes = 2
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite2" type="Sprite" parent="Sprite" index="0"]
 modulate = Color( 0.63, 0.36, 2.33, 1 )

@@ -3,7 +3,7 @@
 [ext_resource path="res://enemies/BaseEnemy.tscn" type="PackedScene" id=1]
 [ext_resource path="res://enemies/trigun/sprites/trigun_light.png" type="Texture" id=2]
 [ext_resource path="res://enemies/trigun/TrigunEnemyLight.gd" type="Script" id=3]
-[ext_resource path="res://enemies/trigun/beams/EnemyTrigunLightBeam.tscn" type="PackedScene" id=4]
+[ext_resource path="res://enemies/basic/beams/EnemyLightBeam.tscn" type="PackedScene" id=4]
 [ext_resource path="res://enemies/common/sprites/explosion_3/explosion.png" type="Texture" id=5]
 
 [sub_resource type="AtlasTexture" id=5]
@@ -56,7 +56,7 @@ extents = Vector2( 32, 26.75 )
 [node name="TrigunEnemyLight" instance=ExtResource( 1 )]
 rotate = true
 script = ExtResource( 3 )
-health_points = 30
+health_points = 16
 movement_speed = 50.0
 beam_scene = ExtResource( 4 )
 
