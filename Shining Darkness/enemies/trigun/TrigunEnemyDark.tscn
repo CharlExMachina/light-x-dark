@@ -69,7 +69,6 @@ playing = true
 offset = Vector2( 0, -5.71429 )
 
 [node name="ExplosionAnimation" parent="." index="1"]
-scale = Vector2( 5, 5 )
 frames = SubResource( 12 )
 
 [node name="Area2D" parent="." index="2"]
