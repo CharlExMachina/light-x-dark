@@ -22,6 +22,7 @@ var _dark_beam_scene = preload("res://player/beams/DarkBeam.tscn")
 var _velocity: Vector2
 var _movement: Vector2
 var _x_limits: float
+var _y_limits: float
 var _sprite_size: float
 var _can_shoot_light_beam: bool = true
 var _can_shoot_dark_beam: bool = true
@@ -34,6 +35,7 @@ var y_acc = 0.0
 
 func _ready() -> void:
 	_x_limits = get_viewport_rect().size.x
+	_y_limits = get_viewport_rect().size.y
 	var ship_sprite_frame_width = _ship_sprite.get_rect().size.x * _ship_sprite.transform.get_scale().x / 2.0
 	_sprite_size = ship_sprite_frame_width
 
@@ -63,6 +65,7 @@ func _handle_movement() -> void:
 	_velocity = _movement.normalized()
 	_velocity = move_and_slide(_velocity * movement_speed)
 	position.x = clamp(position.x, 0 + _sprite_size, _x_limits - _sprite_size)
+	position.y = clamp(position.y, 0 + _sprite_size, _y_limits - _sprite_size)
 
 
 func _handle_mode_switch() -> void:

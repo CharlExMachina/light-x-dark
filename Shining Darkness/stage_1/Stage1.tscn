@@ -435,6 +435,9 @@ curve = SubResource( 78 )
 position = Vector2( 2146, -806 )
 rotation = 1.17226
 
+[node name="AnimatedSprite" parent="Camera2D/Path2D/BoosterEnemyDark" index="2"]
+frame = 3
+
 [node name="AudioStreamPlayer" parent="Camera2D/Path2D/BoosterEnemyDark" index="7"]
 volume_db = -80.0
 
@@ -443,7 +446,7 @@ position = Vector2( 2146, -806 )
 rotation = 1.17226
 
 [node name="AnimatedSprite" parent="Camera2D/Path2D/BoosterEnemyLight" index="2"]
-frame = 0
+frame = 1
 
 [node name="AudioStreamPlayer" parent="Camera2D/Path2D/BoosterEnemyLight" index="7"]
 volume_db = -80.0
@@ -494,18 +497,15 @@ __meta__ = {
 [node name="Stars3" type="TextureRect" parent="CanvasLayer"]
 self_modulate = Color( 2.5, 1, 2.5, 1 )
 material = SubResource( 72 )
-margin_left = 546.0
+margin_left = 601.0
 margin_top = -4.0
-margin_right = 1828.0
+margin_right = 1883.0
 margin_bottom = 715.0
 texture = ExtResource( 16 )
 expand = true
 stretch_mode = 2
 flip_h = true
 flip_v = true
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Stars4" type="TextureRect" parent="CanvasLayer"]
 self_modulate = Color( 2.6, 2.6, 1, 1 )
