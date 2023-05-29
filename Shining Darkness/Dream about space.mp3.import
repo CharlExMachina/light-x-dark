@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Dream about space.mp3-0a78e83f1c0303c9440b350e6f2bfa91.mp3str"
+
+[deps]
+
+source_file="res://Dream about space.mp3"
+dest_files=[ "res://.import/Dream about space.mp3-0a78e83f1c0303c9440b350e6f2bfa91.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
